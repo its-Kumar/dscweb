@@ -4,7 +4,8 @@
 </code>
 <br>
 <code>
-  cd path/to/dir <br>
-  python manage.py runserver<br>
-  
+  cd path/to/dir
+</code>
+<code>
+  python manage.py runserver
 </code>
