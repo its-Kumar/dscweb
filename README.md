@@ -6,6 +6,8 @@
 <code>
   cd path/to/dir
 </code>
+<br>
+
 <code>
   python manage.py runserver
 </code>
