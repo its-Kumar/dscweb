@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ step.title }}
+{% endblock title %}
+
+{% block content %}
+<article>
+    <h2> <a href="{% url 'courses:detail' pk=step.course.pk %}">{{ step.course.title }} </a> </h2>
+    <h3> {{ step.title }} </h3>
+    {{ step.content|linebreaks }}
+</article>
+{% endblock content %}

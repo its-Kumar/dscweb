@@ -19,13 +19,13 @@ from .views import home_view, about_view, register_view
 from blog.views import blog_post_create_view
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view),
-    path('about/', about_view),
-    path('register/', register_view),
-    path('blog-new/',blog_post_create_view),
-    path('blog/',include('blog.urls')),
-    
+    path('', home_view, name='home'),
+    path('about/', about_view, name='about'),
+    path('register/', register_view, name='register'),
+    path('blog-new/', blog_post_create_view),
+    path('blog/', include('blog.urls', namespace='blog')), 
+    path('courses/', include('courses.urls', namespace='courses')),
+
 ]

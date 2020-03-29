@@ -11,3 +11,6 @@
 <code>
   python manage.py runserver
 </code>
+
+django admin : dsc
+password : 
