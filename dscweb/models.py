@@ -8,3 +8,6 @@ class Member(models.Model):
     email       = models.EmailField()
     password    = models.CharField(max_length=18, null=False, blank=False)
 
+    def __str__(self):
+        return self.username
+    
