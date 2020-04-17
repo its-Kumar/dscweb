@@ -3,7 +3,8 @@ from .forms import MemberForm
 from .models import Member
 
 def home_view(request):
-    context = {"title": "DSC"}
+    members = Member.objects.all()
+    context = {"title": "DSC", "members": members}
     return render(request, 'home.html', context)
 
 def about_view(request):

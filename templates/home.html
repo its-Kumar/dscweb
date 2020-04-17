@@ -50,14 +50,16 @@
             <p class="text-center">The ones who run this club</p>
             <div class="row">
                 <div class="col-sm-3 p-4">
+                    {% for member in members %}
                     <div class="card shadow m-2">
-                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
+                        <img src="{{ member.pic.url }}" alt="Pic" class="card-img-top img-fluid">
                         <div class="card-body text-center">
-                            <h2>Vikas</h2>
-                            <p class="text-secondary h5">leader</p>
-                            <p>the initial person of the dsc</p>
+                            <h2>{{ member.first_name }} {{ member.last_name }}</h2>
+                            <p class="text-secondary h5">{{ member.title }}</p>
+                            <p>{{ member.description }}</p>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
                 <div class="col-sm-3 p-4">
                     <div class="card shadow">
