@@ -1,27 +1,52 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'home' %}">DSC</a>
+{%load static%}
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg fixed-top ">
+  <img src="{%static 'images/logo.png'%}" alt="sr" width="50px" class="img-fluid" height="50px">
+  <a class="navbar-brand mx-2 " href="{% url 'home' %}">DEVELOPER STUDENT CLUB</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+  <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+    <ul class="navbar-nav " style="position:relative; right:auto;">
+      <li class="nav-item  mx-5"> 
+      &nbsp;
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'blog:blogs' %}">Blog</a>
+      <li class="nav-item  mx-5"> 
+        &nbsp;
+        </li>
+      <li class="nav-item  mx-5"> 
+          &nbsp;
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'courses:list' %}">Courses</a>
+      <li class="nav-item  mx-5"> 
+            &nbsp;
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'about' %}">About</a>
+      <li class="nav-item  mx-5"> 
+              &nbsp;
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      <li class="nav-item  mx-5"> 
+        &nbsp;
+        </li>
+        <li class="nav-item  mx-5"> 
+          &nbsp;
+          </li>
+        
+      <li class="nav-item active mx-2"> 
+        <a class="nav-link" href="{% url 'home' %}"> <i class="fas fa-home"></i>Home <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="{% url 'blog:blogs' %}"><i class="fas fa-blog"></i>Blog</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="{% url 'courses:list' %}"><i class="fas fa-book-open"></i>Courses</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="{% url 'about' %}"><i class="fas fa-th"></i>About</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user "></i>Register</a>
+      </li>
+      <!--
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -37,10 +62,10 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
+    -->
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
+
+    
   </div>
 </nav>

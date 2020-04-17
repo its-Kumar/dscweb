@@ -1,8 +1,236 @@
 {% extends 'base.html' %}
+{%load static%}
 {% block doc_title %} - Home {% endblock %}
 
 {% block content %}
-    <h1>Home!!!</h1>    
-    <h1> Hello DSC </h1>
 
+    <section>
+        <div class="container-fluid bgimg-1 mt-5" style="height: 800px;">
+            <div class=" text-white mt-5" style="font-size: 5vw;margin:10vw ;padding:5vw">
+                <p class="mt-5 " >COME TOGETHER...<br>LEARN TOGETHER...<br>GROW TOGETHER...</p>
+                <button type="button" class="btn btn-secondary" style="font-size: 3vw;">Join Us</button>
+            </div>
+            
+        </div>
+    </section>
+   
+    <!--About-->
+    <section>
+        <div class="container-fluid py-5">
+            <h1 class="text-center">About the club</h1>
+            <p class="text-center">Key features of our club</p>
+            <div class="row">
+                <div class="col-sm-3 text-center">
+                    <h1> <i class="fas fa-heart "></i></h1>
+                    <h3 >passion</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. molestias beatae quas?</p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <h1> <i class="fas fa-heart "></i></h1>
+                    <h3 >passion</h3>
+                    <p >Lorem ipsum dolor, sit amet consectetur adipisicing elit. laboriosam temporibus, voluptas labore asperiores molestias beatae quas?</p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <h1> <i class="fas fa-heart "></i></h1>
+                    <h3>passion</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. ore asperiores molestias beatae quas?</p>
+                </div>
+                <div class="col-sm-3 text-center">
+                   <h1> <i class="fas fa-heart "></i></h1>
+                    <h3 >passion</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. stias beatae quas?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Team-->
+    <section>
+        <div class="container-fluid py-5 " style="background-color: rgb(229, 226, 226);">
+            <h1 class="text-center">THE TEAM</h1>
+            <p class="text-center">The ones who run this club</p>
+            <div class="row">
+                <div class="col-sm-3 p-4">
+                    <div class="card shadow m-2">
+                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
+                        <div class="card-body text-center">
+                            <h2>Vikas</h2>
+                            <p class="text-secondary h5">leader</p>
+                            <p>the initial person of the dsc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-4">
+                    <div class="card shadow">
+                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid ">
+                        <div class="card-body text-center">
+                            <h2>Vikas</h2>
+                            <p class="text-secondary h5">leader</p>
+                            <p>the initial person of the dsc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-4">
+                    <div class="card shadow">
+                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
+                        <div class="card-body text-center">
+                            <h2>Vikas</h2>
+                            <p class="text-secondary h5">leader</p>
+                            <p>the initial person of the dsc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-4">
+                    <div class="card shadow">
+                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
+                        <div class="card-body text-center">
+                            <h2 >Vikas</h2>
+                            <p class="text-secondary h5">leader</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="text-center">
+                <button type="button" class="" data-toggle="collapse" data-target="#rem"><i class="fas fa-chevron-circle-down" style="text-size:45px;"></i></button>
+            </div>
+            <div class="row collapse" id="rem">
+                <div class="col-sm-3 p-4">
+                    <div class="card shadow m-2">
+                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
+                        <div class="card-body text-center">
+                            <h2>Vikas</h2>
+                            <p class="text-secondary h5">leader</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-4">
+                    <div class="card shadow">
+                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid ">
+                        <div class="card-body text-center">
+                            <h2>Vikas</h2>
+                            <p class="text-secondary h5">leader</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-4">
+                    <div class="card shadow">
+                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
+                        <div class="card-body text-center">
+                            <h2>Vikas</h2>
+                            <p class="text-secondary h5">leader</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-4">
+                    <div class="card shadow">
+                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
+                        <div class="card-body text-center">
+                            <h2 >Vikas</h2>
+                            <p class="text-secondary h5">leader</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--Stats-->
+    <section>
+        <div class="container-fluid p-5 bg-secondary">
+            <div class="row">
+                <div class="col-sm-3 text-center">
+                    <h2>25 </h2>
+                    <h3>Members</h3>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <h2>10+</h2>
+                    <h3>Events</h3>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <h2>33+</h2>
+                    <h3>Members</h3>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <h2>25 </h2>
+                    <h3>Members</h3>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--work-->
+    <section>
+        <div class="container-fluid" style="height: 400px;">
+            <h1 class="text-center">OUR WORK</h1>
+        </div>
+    </section>
+
+    <!--footer-->
+    <section>
+        <div >
+            <div id="footer">
+					<div id="content" class="container-fluid">
+						<div id="content1">
+							<p style="color:white; font-size:2vw; margin-top:30px;margin-left:20px;">Important Links</p>
+							<nav>
+								<ul>
+								<li><a href='http://recb.ac.in/' target="_blank">Rajkiya Engineering College</a></li>
+								<li><a href="https://aktu.ac.in/" target="_blank">Uttar Pradesh Technical University</a></li>
+								<li><a href="http://www.teqip.in/" target="_blank">TEQIP III </a></li>
+								</ul>
+							</nav>
+						</div>
+						<div id="content2">
+							<p style="color:white; font-size:2vw; margin-top:30px;margin-left:20px;">Resources</p>
+							<nav>
+								<ul>
+								<li><a href="#" target="_blank">E-Library</a></li>
+								<li><a href="#" target="_blank">Online Classes</a></li>
+								<li><a href="#" target="_blank">Free Workshop</a></li>
+								<li><a href="#" target="_blank">Crack Interview</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div id="content3">
+							<p style="color:white; font-size:2vw; margin-top:30px;margin-left:20px;">Support Us</p>
+							<nav>
+								<ul>
+								<li><a class="fa-circle-o" href="https://github.com" target="_blank">Git Hub</a></li>
+								<li><a href="https://hackerrank.com" target="_blank">Hacker Rank</a></li>
+								<li><a href="https://interviewbit.com" target="_blank">Interview Bit</a></li>
+								<li><a href="https://hackerearth.com" target="_blank">Hacker Earth</a></li>
+
+								</ul>
+							</nav>
+							
+						</div>
+						<div id="content4" >
+							<p style="color:white; font-size:2vw; margin-top:30px;margin-left:20px;">Google Maps</p>
+                                                        <a href="https://www.google.com/maps/place/Rajkiya+Engineering+College+Bijnor/@29.1362073,78.2205127,12.83z/data=!4m12!1m6!3m5!1s0x390b96ff929daa1b:0x6f84c5006226847c!2sRajkiya+Engineering+College+Bijnor!8m2!3d29.1322062!4d78.2465653!3m4!1s0x390b96ff929daa1b:0x6f84c5006226847c!8m2!3d29.1322062!4d78.2465653" target="_blank"><img src="{%static 'images/map.png'%}" class="img-fluid" width="150px" height="150px"></a>
+						</div>
+						<div id="content5">
+							<p style="color:white; font-size:2vw; margin-top:30px;margin-left:20px;">Contact Us</p>
+							<p>Rajkiya Engineering College
+							Chandpur, Bijnor
+							UP-246725
+							dscrecbijnor@gmail.com
+							</p>
+						</div>
+					</div>
+					<div id="last" class="container-fluid" >
+						<div class="social"><a href="https://www.facebook.com/dscrecbijnor/" target="_blank"><img src="{%static 'images/facebook.ico'%}" class="img-fluid"></a></div>
+						<div class="social"><a href="https://www.instagram.com/dscrecbijnor/?igshid=b8dp92k5qnhu" target="_blank"><img src="{%static 'images/insta.png'%}" class="img-fluid" height="25px" width="25px"></a></div>
+						<div class="social"><a href="https://twitter.com/DscRec" target="_blank"><img src="{%static 'images/twitter.ico'%}" class="img-fluid"></a></div>
+						<div class="social"><a href="#" target="_blank"><img src="{%static 'images/message.ico'%}" class="img-fluid"></a></div>
+						<div class="social"><a href="https://dscrecbijnor.blogspot.com" target="_blank"><img src="{%static 'images/blogger.png'%}" class="img-fluid" style="height: 25px;width:25px;"></a></div>
+						<span style="float:right;margin-top:15px;font-size:1vw;font-family:arial;color:lightgrey; margin-right:30px;">&copy; 2019 <u>DSC</u>- All Right Reserved</span>
+					</div>
+				</div>
+			</div>
+    </section>
 {% endblock %}
