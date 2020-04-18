@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import MemberForm
 from .models import Member
 
@@ -26,4 +26,10 @@ def register_view(request):
         form = MemberForm()
     context = {"form": form, "title":"Register"}
     return render(request, 'form.html', context)
+
+def member_detailView(request, first_name):
+    member = get_object_or_404(Member, first_name=first_name)
+    context = {"member": member}
+    return render(request, 'member-view.html', context)
+
 

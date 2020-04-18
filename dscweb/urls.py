@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import home_view, about_view, register_view
+from .views import home_view, about_view, register_view, member_detailView
 from blog.views import blog_post_create_view
 from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
+    path('member/<str:first_name>/', member_detailView),
     path('about', about_view, name='about'),
     path('register/', register_view, name='register'),
     path('blog-new/', blog_post_create_view, name='new_blog'),

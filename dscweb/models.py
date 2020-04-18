@@ -14,4 +14,7 @@ class Member(models.Model):
 
     def __str__(self):
         return self.first_name
+
+    def get_absolute_url(self):
+        return f"/member/{self.first_name}"
     
