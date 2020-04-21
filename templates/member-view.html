@@ -4,15 +4,19 @@
 {% block content %}
     <h1> Member </h1>
     <div class="card shadow m-2">
-        <img src="{{ member.pic.url }}" class="card-img-top img-fluid">
+        <img src="{{ member.pic.url }}" class="card-img-top img-fluid" >
         <div class="card-body text-center">
             <h2>{{ member.first_name }} {{ member.last_name }}</h2>
             <p class="text-secondary h5">{{ member.title }}</p>
             <p>{{ member.description }}</p>
-            <p>{{ member.mobile }}
-            <div class=""><a href="{{ member.facebook }}" target="_blank"><img src="{%static 'images/facebook.ico'%}" class="img-fluid"></a></div>
-            <div class=""><a href="{{ member.linkedin }}" target="_blank"><img src="{%static 'images/message.ico'%}" class="img-fluid"></a></div>
-            <div class=""><a href="{{ member.github }}" target="_blank"><img src="{%static 'images/blogger.png'%}" class="img-fluid" style="height: 25px;width:25px;"></a></div>
+            <h5> Contact: </h5>
+            <p>Mobile: {{ member.mobile }}
+            <br>
+            <a href="{{ member.facebook }}" target="_blank"><img src="{% static 'images/icons/facebook.png' %}" style="height: 50px;width:50px;" class="img-fluid"></a>
+            <br>
+            <a href="{{ member.linkedin }}" target="_blank"><img src="{% static 'images/icons/linkedin.png' %}" style="height: 50px;width:50px;"></a>
+            <br>
+            <a href="{{ member.github }}" target="_blank"><img src="{% static 'images/icons/github.png' %}" style="height: 50px;width:50px;" class="img-fluid" ></a>
         </div>
     </div>
 
