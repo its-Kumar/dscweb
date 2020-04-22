@@ -3,12 +3,15 @@
 {% block doc_title %} - Blog List {% endblock %}
 
 {% block content %}
-    <div class="row">
-    <a class="btn-medium btn-primary" href="{% url 'new_blog' %}"> New </a>
+<div style="background-color: orangered;" class=""> 
+
+    <div class="text-center p-5" style="margin-top:68px;">
+        <a class="btn btn-primary " href="{% url 'new_blog' %}"> New Blog </a>
     </div>
-    <div class="row">
+    <div class="row " style="box-shadow: darkgray; border-radius:20px;">
         {% for object in object_list %}
-            {% include 'blog/list-inline.html' with blog_post=object truncate=True detail=False %}
+        {% include 'blog/list-inline.html' with blog_post=object truncate=True detail=False %}
         {% endfor %}
     </div>
+</div>
 {% endblock %}

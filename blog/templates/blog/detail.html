@@ -3,7 +3,8 @@
 {% block doc_title %} - {{ object.title }} {% endblock %}
 
 {% block content %}
-    <div class="row">
+<div style="margin-top: 68px; background-color:orangered;" class="p-5">
+    <div class="row" >
     {% include 'blog/list-inline.html' with blog_post=object detail=True %}
 
     {% if request.user.is_authenticated %}
@@ -15,4 +16,5 @@
         {% endif %}
     {% endif %}
     </div>
+</div>
 {% endblock %}

@@ -5,9 +5,9 @@
 {% block content %}
 
     <section>
-        <div class="container-fluid bgimg-1 mt-5" style="height: 800px;">
+        <div class="container-fluid bgimg-1 mt-5" style="height: 600px;">
             <div class=" text-white mt-5" style="font-size: 5vw;margin:10vw ;padding:5vw">
-                <p class="mt-5 " >COME TOGETHER...<br>LEARN TOGETHER...<br>GROW TOGETHER...</p>
+                <p class="mt-5 " style="font-family:cursive;" >COME TOGETHER...<br>LEARN TOGETHER...<br>GROW TOGETHER...</p>
                 <button type="button" class="btn btn-secondary" style="font-size: 3vw;">Join Us</button>
             </div>
             
@@ -49,18 +49,18 @@
             <h1 class="text-center">THE TEAM</h1>
             <p class="text-center">The ones who run this club</p>
             <div class="row">
+                {% for member in members %}
                 <div class="col-sm-3 p-4">
-                    {% for member in members %}
-                    <div class="card shadow m-2">
-                        <img src="{{ member.pic.url }}" alt="Pic" class="card-img-top img-fluid">
+                    <div class="card shadow ">
+                        <img src="{{ member.pic.url }}" alt="Pic" class="card-img-top img-fluid" style="width: 400px; height:400px;">
                         <div class="card-body text-center">
                             <h2>{{ member.first_name }} {{ member.last_name }}</h2>
                             <p class="text-secondary h5">{{ member.title }}</p>
                             <p>{{ member.description }}</p>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
+                    {% endfor %}
                 <div class="col-sm-3 p-4">
                     <div class="card shadow">
                         <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid ">
@@ -98,7 +98,7 @@
             </div>
             <div class="row collapse" id="rem">
                 <div class="col-sm-3 p-4">
-                    <div class="card shadow m-2">
+                    <div class="card shadow ">
                         <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
                         <div class="card-body text-center">
                             <h2>Vikas</h2>
