@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 
 <!doctype html>
 <html lang="en">
@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="{%static 'images/logo.png'%}" rel="icon"/>
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -26,7 +27,7 @@
           }
     </style>
 </head>
-<body>
+<body style="padding-top: 60px;">
     {% include 'navbar.html' %}
     
     <div class="site-container">
@@ -36,6 +37,7 @@
             {% endblock %}
         
     </div>
+    {% include 'footer.html' %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -3,14 +3,15 @@
 {% block doc_title %} - Blog {% endblock %}
 
 {% block content %}
+    <div class="container" style="padding-top: 25px;">
+        <h1> Are you sure you want to delete the following :</h1>
+        <p> {{ object.title }}</p>
+        <form method="POST" > {% csrf_token %}
 
-<h1> Are you sure you want to delete the following :</h1>
-<p> {{ object.title }}</p>
-<form method="POST" > {% csrf_token %}
-
-    <button class="btn btn-danger"> Yes, delete </button>
-    <button class="btn btn-success"> No </button>
-     
-</form>
+            <button class="btn btn-danger"> Yes, delete </button>
+            <button class="btn btn-success"> No </button>
+            
+        </form>
+    </div>
 
 {% endblock %}

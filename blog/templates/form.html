@@ -3,10 +3,10 @@
 {% block head_title %}Form {% endblock %}
 
 {% block content %}
-
-{% if title %}
-    <h1> {{ title }} </h1>
-{% endif %}
+    <div class="container" style="padding-top: 25px;">
+    {% if title %}
+        <h1> {{ title }} </h1>
+    {% endif %}
 
     <form method="POST" action="." enctype='multipart/form-data'> {% csrf_token %}
         <!--
@@ -17,5 +17,6 @@
     {{ form.as_p }}
     <button type="submit">Send </button>
     </form>
+    </div>
 
 {% endblock %}

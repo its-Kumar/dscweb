@@ -3,9 +3,11 @@
 {% block doc_title %} - {{ step.title }} {% endblock %}
 
 {% block content %}
-<article>
-    <h2> <a href="{% url 'courses:detail' pk=step.course.pk %}">{{ step.course.title }} </a> </h2>
-    <h3> {{ step.title }} </h3>
-    {{ step.content|linebreaks }}
-</article>
+    <div class="container" style="padding-top: 25px;">
+        <article>
+        <h2> <a href="{% url 'courses:detail' pk=step.course.pk %}">{{ step.course.title }} </a> </h2>
+        <h3> {{ step.title }} </h3>
+        {{ step.content|linebreaks }}
+        </article>
+    </div>
 {% endblock content %}
