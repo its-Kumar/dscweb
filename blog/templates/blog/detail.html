@@ -3,16 +3,18 @@
 {% block doc_title %} - {{ object.title }} {% endblock %}
 
 {% block content %}
-    <div class="row">
-    {% include 'blog/list-inline.html' with blog_post=object detail=True %}
+    <div class="container" style="padding-top: 25px;"> 
+        <div class="row">
+            {% include 'blog/list-inline.html' with blog_post=object detail=True %}
 
-    {% if request.user.is_authenticated %}
-        {% if request.user.is_staff %}
-            <div class="col-12">
-            <a href="{{ object.get_edit_url }}">Edit</a>
-            <a href="{{ object.get_delete_url }}">Delete</a>
-            </div>
-        {% endif %}
-    {% endif %}
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_staff %}
+                    <div class="col-12">
+                    <a class ="btn btn-secondary" href="{{ object.get_edit_url }}">Edit</a>
+                    <a class ="btn btn-danger" href="{{ object.get_delete_url }}">Delete</a>
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

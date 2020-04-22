@@ -7,14 +7,16 @@
 {% endblock %}
 
 {% block content %}
-    <div class="cards">
-    {% for course in courses %}
-    <div class="card">
-        <header> <a href="{% url 'courses:detail' pk=course.pk %}">{{ course.title }}</a> </header>
-        <div class="card-copy">
-            {{ course.description }}
+    <div class="container" style="padding-top: 25px;">
+        <div class="cards">
+        {% for course in courses %}
+            <div class="card">
+                <header> <a href="{% url 'courses:detail' pk=course.pk %}">{{ course.title }}</a> </header>
+            <div class="card-copy">
+                {{ course.description }}
+            </div>
+            </div>
+        {% endfor %}
         </div>
-    </div>
-    {% endfor %}
     </div>
 {% endblock content %}
