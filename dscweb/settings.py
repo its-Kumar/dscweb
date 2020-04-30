@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'dscweb',
     'blog',
     'courses',
+    'competitions',
+    'events',
+    'training',
+    'workshops',
 ]
 
 MIDDLEWARE = [
