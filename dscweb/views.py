@@ -25,7 +25,7 @@ def register_view(request):
         obj.save()
         form = MemberForm()
     context = {"form": form, "title":"Register"}
-    return render(request, 'form.html', context)
+    return render(request, 'register-form.html', context)
 
 def member_detailView(request, first_name):
     member = get_object_or_404(Member, first_name=first_name)
