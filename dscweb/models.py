@@ -1,7 +1,7 @@
 from django.db import models
 
 class Member(models.Model):
-    pic         = models.ImageField()
+    pic         = models.ImageField(upload_to='images/members/')
     first_name  = models.CharField(max_length=50, null=False)
     last_name   = models.CharField(max_length=50, null=False)
     mobile      = models.CharField(max_length=12, null=False)
