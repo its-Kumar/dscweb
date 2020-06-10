@@ -124,6 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# paths
 STATIC_URL = '/static/'
 LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn_test')
 STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') #LIVE CDN AWS S3
@@ -134,3 +135,11 @@ STATICFILES_DIRS = [
 STATIC_ROOT=os.path.join(BASE_DIR,'assets')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/' #django storage
+
+# user redirect
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+# Email Backend
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")

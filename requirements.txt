@@ -1,0 +1,6 @@
+# python==3.7
+Django>=3.0.5
+Pillow
+pytz
+asgiref==3.2.7
+sqlparse>=0.2.2
