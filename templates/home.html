@@ -50,11 +50,32 @@
             <p class="text-center">The ones who run this club</p>
             <div class="row">
                 
+                {% for heads in headss %}
+                <div class="col-sm-3 p-4 d-flex">
+                    <div class="card shadow m-2 flex-fill">
+                        <a href=" {{ heads.get_absolute_url }} " >
+                        <img src="{{ heads.pic.url }}" alt="Pic" class="card-img-top img-fluid" >
+                        <div class="card-body text-center">
+                            <h2>{{ heads.first_name }} {{ member.last_name }}</h2>
+                            </a>
+                            <p class="text-secondary h5">{{ heads.title }}</p>
+                            <p>{{ member.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            
+                
+            </div>
+            <div class="text-center">
+                <button type="button" class="" data-toggle="collapse" data-target="#rem"><i class="fas fa-chevron-circle-down" style="text-size:45px;"></i>More Members</button>
+            </div>
+            <div class="row collapse" id="rem">
                 {% for member in members %}
-                <div class="col-sm-3 p-4">
-                    <div class="card shadow m-2">
+                <div class="col-sm-3 p-4 d-flex">
+                    <div class="card shadow m-2 flex-fill">
                         <a href=" {{ member.get_absolute_url }} " >
-                        <img src="{{ member.pic.url }}" alt="Pic" class="card-img-top img-fluid">
+                        <img src="{{ member.pic.url }}" alt="Pic" class="card-img-top img-fluid" >
                         <div class="card-body text-center">
                             <h2>{{ member.first_name }} {{ member.last_name }}</h2>
                             </a>
@@ -64,54 +85,8 @@
                     </div>
                 </div>
                 {% endfor %}
-                
             </div>
-            <div class="text-center">
-                <button type="button" class="" data-toggle="collapse" data-target="#rem"><i class="fas fa-chevron-circle-down" style="text-size:45px;"></i></button>
-            </div>
-            <div class="row collapse" id="rem">
-                <div class="col-sm-3 p-4">
-                    <div class="card shadow ">
-                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
-                        <div class="card-body text-center">
-                            <h2>Vikas</h2>
-                            <p class="text-secondary h5">leader</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 p-4">
-                    <div class="card shadow">
-                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid ">
-                        <div class="card-body text-center">
-                            <h2>Vikas</h2>
-                            <p class="text-secondary h5">leader</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 p-4">
-                    <div class="card shadow">
-                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
-                        <div class="card-body text-center">
-                            <h2>Vikas</h2>
-                            <p class="text-secondary h5">leader</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 p-4">
-                    <div class="card shadow">
-                        <img src="{%static 'images/vikso.jpeg'%}" alt="rajat" class="card-img-top img-fluid">
-                        <div class="card-body text-center">
-                            <h2 >Vikas</h2>
-                            <p class="text-secondary h5">leader</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+               
         </div>
     </section>
     <!--Stats-->

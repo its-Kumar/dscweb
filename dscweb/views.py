@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from .forms import MemberForm
 from .models import Member
+from .models import Heads
 
 def home_view(request):
     members = Member.objects.all()
-    context = {"title": "DSC", "members": members}
+    headss= Heads.objects.all()
+    context = {"title": "DSC", "members": members,"headss":headss}
     return render(request, 'home.html', context)
 
 def about_view(request):
