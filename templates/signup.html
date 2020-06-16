@@ -4,7 +4,6 @@
 
 {% block content %}
 <div class="container" style="padding-top: 25px;">
-	{% csrf_token %}
 	<div class="row container">
 		<div class="col-lg-5">
 			<div class="panel panel-primary">
@@ -12,8 +11,12 @@
 					<h1>Sign Up</h1>
 				</div>
 				<div class="panel-body">
-				<form method="POST" >
+				<form method="post" >
+				{% csrf_token %}
+				{{ form.as_p }}
+					<!--
 					<div>
+
 						<input type="text" placeholder="Name" name="name" class="form-control"><br>
 						<input type="email" placeholder="E-mail" name="email" class="form-control"><br>
 						<input type="password" placeholder="Password" name="password" class="form-control">
@@ -24,6 +27,7 @@
 						<br>
 						<input type="text" placeholder="Address" name="address" class="form-control">
 						<br>
+						-->
 						<button class="btn btn-primary">Submit</button>
 						</div>
 					</form>

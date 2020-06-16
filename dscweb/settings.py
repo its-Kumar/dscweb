@@ -126,15 +126,16 @@ USE_TZ = True
 
 # paths
 STATIC_URL = '/static/'
-LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn_test')
-STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') #LIVE CDN AWS S3
+LOCAL_STATIC_CDN_PATH = os.path.join(
+    os.path.dirname(BASE_DIR), 'static_cdn_test')
+STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')  # LIVE CDN AWS S3
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR , 'staticfiles'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 ]
-STATIC_ROOT=os.path.join(BASE_DIR,'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/' #django storage
+MEDIA_URL = '/media/'  # django storage
 
 # user redirect
 LOGIN_REDIRECT_URL = 'home'

@@ -1,2 +1,9 @@
+# Vs code
+.vscode
 
+#pycache
+__pycache__
+.pyc
+
+# Database
 db.sqlite3
