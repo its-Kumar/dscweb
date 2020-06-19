@@ -1,12 +1,12 @@
 <div class="col-12 col-md-10 mb-3 mx-auto">
     <div class="card {% if not blog_post.publish_date %} bg-dark text-light {% endif %} shadow ">
-        <div class="card-body rounded overflow-hidden " style="height: 300px;" >
-
+       <div class="card-body rounded overflow-hidden" style="height: 300px;" >
+            <small class="text-muted"> {{ blog_post.user }} </small>
+            <h3 class="card-title text-center">{{ blog_post.title }}</h3>
             {% if blog_post.image %}
                 <a href="{{ blog_post.get_absolute_url }}">
                 <img src = "{{ blog_post.image.url }}" class='card-img-top' /></a>
             {% endif %}
-            <h3 class="card-title text-center">{{ blog_post.title }}</h3>
             <p class="card-text overflow-hidden" style="height: 30px;" >
                 <small class="text-muted"> {{ blog_post.publish_date }} </small>
                 {% if truncate %}
