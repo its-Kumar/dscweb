@@ -3,11 +3,24 @@
 {% block doc_title %} - Login {% endblock %}
 
 {% block content %}
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
-<p> Don't have an account? <a href="{% url 'signup' %}"> Sign Up </a> </p>
+<div class="container my-5 card px-0 text-center shadow-lg w-sm-25">
+<div class="card-header shadow-lg">
+
+  <h2>Login</h2>
+</div>
+  <div class="card-body container ">
+
+    <form method="post" class="">
+      <div class="form-group">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-sm">Login</button>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow-lg">
+    <p> Don't have an account? <a href="{% url 'signup' %}"> Sign Up </a> </p>
+  </div>
+</div>
 {% endblock %}

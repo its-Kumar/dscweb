@@ -3,37 +3,25 @@
 {% block doc_title %} - New {% endblock %}
 
 {% block content %}
-<div class="container" style="padding-top: 25px;">
-	<div class="row container">
-		<div class="col-lg-5">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
+<div class="container card my-5 px-0 w-sm-25 shadow-lg" >
+				<div class="card-header text-center shadow-lg">
 					<h1>Sign Up</h1>
 				</div>
-				<div class="panel-body">
-				<form method="post" >
-				{% csrf_token %}
-				{{ form.as_p }}
-					<!--
-					<div>
+				<div class="card-body text-center">
+				<form method="post" class="">
+					
 
-						<input type="text" placeholder="Name" name="name" class="form-control"><br>
-						<input type="email" placeholder="E-mail" name="email" class="form-control"><br>
-						<input type="password" placeholder="Password" name="password" class="form-control">
-						<br>
-						<input type="number" placeholder="Contact" name="contact" class="form-control">
-						<br>
-						<input type="text" placeholder="City" name="city" class="form-control">
-						<br>
-						<input type="text" placeholder="Address" name="address" class="form-control">
-						<br>
-						-->
-						<button class="btn btn-primary">Submit</button>
-						</div>
-					</form>
+						
+							
+							{% csrf_token %}
+							{{ form.as_p }}
+					
+					
+				<button class="btn btn-primary">Submit</button>
+			    </form>
+				
 				</div>
-			</div>
-		</div>
-	</div>
+			
+		
 </div>
 {% endblock %}
