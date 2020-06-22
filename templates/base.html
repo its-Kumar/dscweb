@@ -14,17 +14,55 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="{%static 'css/footer.css'%}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Great+Vibes|Lobster|Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <title>DSC{% block doc_title %}{% endblock %}</title>
     <style>
         body{
             margin:0px;
         }
         .bgimg-1 {
+            min-height: 100vh;
             background-position: center;
             background-size: cover;
-            background-image: url("{%static 'images/459024.jpg'%}");
-            background-origin: inherit;
-            min-height: 100vh;
+            background-image: url("{%static 'images/pcb.jpg'%}");
+          }
+          .focus{
+              position: relative;
+              width: 100%;
+              height: 100vh;
+          }
+          .bgimg-2{
+              background-attachment: fixed;
+              background-image: url("{%static 'images/459024.jpg'%}");
+              
+          }
+
+          .motto{
+              opacity: 0;
+          }
+          .motto.animated{
+              opacity: 1;
+          }
+
+          .passion{
+              opacity: 0;
+          }
+          .passion.animated{
+              opacity: 1;
+          }
+
+          .mission{
+              opacity: 0;
+          }
+          .mission.animated{
+              opacity: 1;
+          }
+
+          .vision{
+              opacity: 0;
+          }
+          .vision.animated{
+              opacity: 1;
           }
     </style>
 </head>
@@ -51,6 +89,41 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+         integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>    
+    <script>
+        $(document).mousemove(function(m){
+            var X=m.pageX;
+            var Y=m.pageY;
+            $('.focus').css('background','radial-gradient(circle at '+X+'px '+Y+'px,transparent, rgba(0,0,1,1) 40%)')
+        })
 
+
+        $(document).ready(function(){
+       $('.motto').waypoint(function(direction){
+         $('.motto').addClass('animated animate__animated animate__fadeInLeft animate__slow')
+       },{
+         offset:'600px'
+       })
+
+       $('.passion').waypoint(function(direction){
+         $('.passion').addClass('animated animate__animated animate__fadeInDown animate__slow')
+       },{
+         offset:'600px'
+       })
+       
+       $('.mission').waypoint(function(direction){
+         $('.mission').addClass('animated animate__animated animate__fadeInUp animate__slow')
+       },{
+         offset:'600px'
+       })
+
+       $('.vision').waypoint(function(direction){
+         $('.vision').addClass('animated animate__animated animate__fadeInRight animate__slow')
+       },{
+         offset:'600px'
+       })
+     });
+    </script>
 </body>
 </html>
