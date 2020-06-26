@@ -51,15 +51,52 @@
             <div class="row">
                 
                 {% for heads in headss %}
-                <div class="col-sm-3 p-4 d-flex">
-                    <div class="card shadow m-2 flex-fill">
-                        <a href=" {{ heads.get_absolute_url }} " >
-                        <img src="{{ heads.pic.url }}" alt="Pic" class="card-img-top img-fluid" >
-                        <div class="card-body text-center">
-                            <h2>{{ heads.first_name }} {{ member.last_name }}</h2>
-                            </a>
-                            <p class="text-secondary h5">{{ heads.title }}</p>
-                            <p>{{ member.description }}</p>
+                <div class="col-sm-3 p-4 ">
+                    <div class="team-single">
+                        <div class="content-area">
+                            <div class="side1">
+
+                                <div class="card shadow ">
+                                    <div class="card-body text-center">
+                                        <div class="img-area">
+
+                                            <a href=" {{ heads.get_absolute_url }} " >
+                                                <img src="{{ heads.pic.url }}" alt="Pic" class="img-fluid" >
+                                            </a>
+                                        </div>
+                                            <h2 class="membername">{{ heads.first_name }} {{ heads.last_name }}</h2>
+                                            <p class="text-secondary h5">{{ heads.title }}</p>
+                                            
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="side2">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <h2 class="membername">{{ heads.first_name }} {{ heads.last_name }}</h2>
+                                        <p>{{ member.description }}</p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam tempora, possimus autem repudiandae? Eos nam alias 
+                                         <ul class="list-inline">
+                                             <li class="list-inline-item">
+                                                 <a href="" class="social-link">
+                                                     <i class="fab fa-facebook-square" aria-hidden="true"></i>
+                                                 </a>
+                                             </li>
+                                             <li class="list-inline-item">
+                                                <a href="" class="social-link">
+                                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="" class="social-link">
+                                                   <i class="fab fa-github-square" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                         </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,18 +109,57 @@
             </div>
             <div class="row collapse" id="rem">
                 {% for member in members %}
-                <div class="col-sm-3 p-4 d-flex">
-                    <div class="card shadow m-2 flex-fill">
-                        <a href=" {{ member.get_absolute_url }} " >
-                        <img src="{{ member.pic.url }}" alt="Pic" class="card-img-top img-fluid" >
-                        <div class="card-body text-center">
-                            <h2>{{ member.first_name }} {{ member.last_name }}</h2>
-                            </a>
-                            <p class="text-secondary h5">{{ member.title }}</p>
-                            <p>{{ member.description }}</p>
+
+                <div class="col-sm-3 p-4 ">
+                    <div class="team-single">
+                        <div class="content-area">
+                            <div class="side1">
+
+                                <div class="card shadow ">
+                                    <div class="card-body text-center">
+                                        <div class="img-area">
+
+                                            <a href=" {{ member.get_absolute_url }} " >
+                                                <img src="{{ member.pic.url }}" alt="Pic" class="img-fluid" >
+                                            </a>
+                                        </div>
+                                            <h2 class="membername">{{ member.first_name }} {{ member.last_name }}</h2>
+                                            <p class="text-secondary h5">{{ member.title }}</p>
+                                            
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="side2">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <h2 class="membername">{{ member.first_name }} {{ member.last_name }}</h2>
+                                        <p>{{ member.description }}</p>
+                                        
+                                         <ul class="list-inline">
+                                             <li class="list-inline-item">
+                                                 <a href="" class="social-link">
+                                                     <i class="fab fa-facebook-square" aria-hidden="true"></i>
+                                                 </a>
+                                             </li>
+                                             <li class="list-inline-item">
+                                                <a href="" class="social-link">
+                                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="" class="social-link">
+                                                   <i class="fab fa-github-square" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                         </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
                 {% endfor %}
             </div>
                
