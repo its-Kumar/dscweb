@@ -2,94 +2,99 @@
 
 <!doctype html>
 <html lang="en">
+
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="{%static 'images/logo.png'%}" rel="icon"/>
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="{%static 'css/footer.css'%}" type="text/css">
-    <link rel="stylesheet" href="{%static 'css/dscstyle.css'%}" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Bangers|Great+Vibes|Lobster|Permanent+Marker&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
-    <title>DSC{% block doc_title %}{% endblock %}</title>
-    <style>
-            .bgimg-1 {
-                    min-height: 100vh;
-                    background-position: center;
-                    background-size: cover;
-                    background-image: url("{%static 'images/pcb.jpg'%}");
-  }
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="{%static 'images/logo.png'%}" rel="icon" />
 
-         .bgimg-2{
-                background-attachment: fixed;
-                background-image: url("{%static 'images/459024.jpg'%}");
-      
-  }
-    </style>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="{%static 'css/footer.css'%}" type="text/css">
+	<link rel="stylesheet" href="{%static 'css/dscstyle.css'%}" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Great+Vibes|Lobster|Permanent+Marker&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+	<title>DSC{% block doc_title %}{% endblock %}</title>
+	<style>
+		.bgimg-1 {
+			min-height: 100vh;
+			background-position: center;
+			background-size: cover;
+			background-image: url("{%static 'images/pcb.jpg'%}");
+		}
+
+		.bgimg-2 {
+			background-attachment: fixed;
+			background-image: url("{%static 'images/459024.jpg'%}");
+
+		}
+	</style>
 </head>
+
 <body style="padding-top:0px;">
-    {% include 'navbar.html' %}
-    
-    <div class="site-container">
-        
-            {% block content %}
-            replace me
-            {% endblock %}
-        
-    </div>
-    {% include 'footer.html' %}
+	{% include 'navbar.html' %}
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
-         integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>    
-    <script>
-        $(document).mousemove(function(m){
-            var X=m.pageX;
-            var Y=m.pageY;
-            $('.focus').css('background','radial-gradient(circle at '+X+'px '+Y+'px,transparent, rgba(0,0,1,1) 40%)')
-        })
+	<div class="site-container">
+
+		{% block content %}
+		replace me
+		{% endblock %}
+
+	</div>
+	{% include 'footer.html' %}
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+		integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+	<script>
+		$(document).mousemove(function (m) {
+			var X = m.pageX;
+			var Y = m.pageY;
+			$('.focus').css('background', 'radial-gradient(circle at ' + X + 'px ' + Y + 'px,transparent, rgba(0,0,1,1) 40%)')
+		})
 
 
-        $(document).ready(function(){
-       $('.motto').waypoint(function(direction){
-         $('.motto').addClass('animated animate__animated animate__fadeInLeft animate__slow')
-       },{
-         offset:'600px'
-       })
+		$(document).ready(function () {
+			$('.motto').waypoint(function (direction) {
+				$('.motto').addClass('animated animate__animated animate__fadeInLeft animate__slow')
+			}, {
+				offset: '600px'
+			})
 
-       $('.passion').waypoint(function(direction){
-         $('.passion').addClass('animated animate__animated animate__fadeInDown animate__slow')
-       },{
-         offset:'600px'
-       })
-       
-       $('.mission').waypoint(function(direction){
-         $('.mission').addClass('animated animate__animated animate__fadeInUp animate__slow')
-       },{
-         offset:'600px'
-       })
+			$('.passion').waypoint(function (direction) {
+				$('.passion').addClass('animated animate__animated animate__fadeInDown animate__slow')
+			}, {
+				offset: '600px'
+			})
 
-       $('.vision').waypoint(function(direction){
-         $('.vision').addClass('animated animate__animated animate__fadeInRight animate__slow')
-       },{
-         offset:'600px'
-       })
-     });
-    </script>
+			$('.mission').waypoint(function (direction) {
+				$('.mission').addClass('animated animate__animated animate__fadeInUp animate__slow')
+			}, {
+				offset: '600px'
+			})
+
+			$('.vision').waypoint(function (direction) {
+				$('.vision').addClass('animated animate__animated animate__fadeInRight animate__slow')
+			}, {
+				offset: '600px'
+			})
+		});
+	</script>
 </body>
+
 </html>

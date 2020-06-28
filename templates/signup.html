@@ -3,25 +3,25 @@
 {% block doc_title %} - New {% endblock %}
 
 {% block content %}
-<div class="container card my-5 px-0 w-sm-25 shadow-lg" >
-				<div class="card-header text-center shadow-lg">
-					<h1>Sign Up</h1>
-				</div>
-				<div class="card-body text-center">
-				<form method="post" class="">
-					
+<div class="container card my-5 px-0 w-sm-25 shadow-lg">
+	<div class="card-header text-center shadow-lg">
+		<h1>Sign Up</h1>
+	</div>
+	<div class="card-body text-center">
+		<form method="post" class="">
 
-						
-							
-							{% csrf_token %}
-							{{ form.as_p }}
-					
-					
-				<button class="btn btn-primary">Submit</button>
-			    </form>
-				
-				</div>
-			
-		
+
+
+
+			{% csrf_token %}
+			{{ form.as_p }}
+
+
+			<button class="btn btn-primary">Submit</button>
+		</form>
+
+	</div>
+
+
 </div>
 {% endblock %}

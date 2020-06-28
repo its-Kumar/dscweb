@@ -3,12 +3,12 @@
 {% block doc_title %} - Courses {% endblock %}
 
 {% block title %}
-    Available Courses 
+Available Courses
 {% endblock %}
 
 {% block content %}
-<div style="background-color:grey;" >
-     <div class="cards py-5">
+<div style="background-color:grey;">
+    <div class="cards py-5">
         {% for course in courses %}
         <div class="card m-5 py-5">
             <header> <a href="{% url 'courses:detail' pk=course.pk %}">{{ course.title }}</a> </header>

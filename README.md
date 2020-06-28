@@ -6,7 +6,7 @@
 
 - [Facebook](https://www.facebook.com/dscrecbijnor/)
 - [Twitter](https://twitter.com/DscRec)
-- [Instagram](https://www.instagram.com/dscrecbijnor/?igshid=b8dp92k5qnhu) 
+- [Instagram](https://www.instagram.com/dscrecbijnor/?igshid=b8dp92k5qnhu)
 
 ---
 
@@ -38,4 +38,4 @@ here 8000 is port number. you can use any port number you want.
 ### Admin
 
     django admin : dsc
-    password : 
+    password :

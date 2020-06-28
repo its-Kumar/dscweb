@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 
 {% block doc_title %}
-    - {{ course.title }}
+- {{ course.title }}
 {% endblock %}
 
 {% block content %}
-    <div class="container" style="padding-top: 25px;">
-        <article>
-            <h2> {{ course.title }} </h2>
-            {{ course.description }}
+<div class="container" style="padding-top: 25px;">
+    <article>
+        <h2> {{ course.title }} </h2>
+        {{ course.description }}
 
         <section>
             {% for step in course.step_set.all  %}
-                <h3> 
+            <h3>
                 <a href="{% url 'courses:step' course_pk=step.course.pk step_pk=step.pk %}">{{ step.title }} </a>
-                </h3>
-                {{ step.description }}
+            </h3>
+            {{ step.description }}
             {% endfor %}
         </section>
-        </article>
-    </div>
+    </article>
+</div>
 {% endblock content %}

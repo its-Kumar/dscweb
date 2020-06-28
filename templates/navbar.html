@@ -1,53 +1,56 @@
 {%load static%}
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg fixed-top ">
-  <img src="{%static 'images/logo.png'%}" alt="sr" width="50px" class="img-fluid" height="50px">
-  <a class="navbar-brand " href="{% url 'home' %}" style="font-family: 'Bangers', cursive; font-size:25px">DEVELOPER STUDENT CLUB</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	<img src="{%static 'images/logo.png'%}" alt="sr" width="50px" class="img-fluid" height="50px">
+	<a class="navbar-brand " href="{% url 'home' %}" style="font-family: 'Bangers', cursive; font-size:25px">DEVELOPER
+		STUDENT CLUB</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-  <div class="collapse navbar-collapse  " id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto" style="position:relative; right:auto;">
-      
-        
-      <li class="nav-item active mx-2"> 
-        <a class="nav-link" href="{% url 'home' %}"> <i class="fas fa-home"></i>Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="{% url 'blog:blogs' %}"><i class="fas fa-blog"></i>Blog</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="{% url 'courses:list' %}"><i class="fas fa-book-open"></i>Courses</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="{% url 'about' %}"><i class="fa fa-info"></i> About</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="{% url 'competitions:home' %}"><i class="fas fa-puzzle-piece"></i>Competitions</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="{% url 'events:home' %}"><i class="fas fa-calendar-check"></i> Events</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="{% url 'training:home' %}"><i class="fas fa-terminal"></i>Trainings</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="{% url 'workshops:home' %}"><i class="fas fa-wrench"></i>Workshops</a>
-      </li>
-      <li class="nav-item mx-2">
-      {% if user.is_authenticated %}
-        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-user ">
-        Hi {{ user.username }}!
-        </i>Logout</a>
-      {% else %}
-        <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-user "></i>Login</a>
-      {% endif %}
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" href="#"><i class="fas fa-moon"></i>Dark Mode</a>
-      </li>
-      <!--
+	<div class="collapse navbar-collapse  " id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto" style="position:relative; right:auto;">
+
+
+			<li class="nav-item active mx-2">
+				<a class="nav-link" href="{% url 'home' %}"> <i class="fas fa-home"></i>Home <span
+						class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item mx-2">
+				<a class="nav-link" href="{% url 'blog:blogs' %}"><i class="fas fa-blog"></i>Blog</a>
+			</li>
+			<li class="nav-item mx-2">
+				<a class="nav-link" href="{% url 'courses:list' %}"><i class="fas fa-book-open"></i>Courses</a>
+			</li>
+			<li class="nav-item mx-2">
+				<a class="nav-link" href="{% url 'about' %}"><i class="fa fa-info"></i> About</a>
+			</li>
+			<li class="nav-item mx-2">
+				<a class="nav-link" href="{% url 'competitions:home' %}"><i
+						class="fas fa-puzzle-piece"></i>Competitions</a>
+			</li>
+			<li class="nav-item mx-2">
+				<a class="nav-link" href="{% url 'events:home' %}"><i class="fas fa-calendar-check"></i> Events</a>
+			</li>
+			<li class="nav-item mx-2">
+				<a class="nav-link" href="{% url 'training:home' %}"><i class="fas fa-terminal"></i>Trainings</a>
+			</li>
+			<li class="nav-item mx-2">
+				<a class="nav-link" href="{% url 'workshops:home' %}"><i class="fas fa-wrench"></i>Workshops</a>
+			</li>
+			<li class="nav-item mx-2">
+				{% if user.is_authenticated %}
+				<a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-user ">
+						Hi {{ user.username }}!
+					</i>Logout</a>
+				{% else %}
+				<a class="nav-link" href="{% url 'login' %}"><i class="fas fa-user "></i>Login</a>
+				{% endif %}
+			</li>
+			<li class="nav-item mx-2">
+				<a class="nav-link" href="#"><i class="fas fa-moon"></i>Dark Mode</a>
+			</li>
+			<!--
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -64,9 +67,9 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     -->
-    </ul>
-    
+		</ul>
 
-    
-  </div>
+
+
+	</div>
 </nav>

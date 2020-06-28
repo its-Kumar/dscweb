@@ -4,196 +4,201 @@
 
 {% block content %}
 
-    <section class="bgimg-1">
-        <div class="container-fluid focus mt-0 " >
-            <div class=" text-white mt-5" style="font-size: 5vw;margin:10vw ;padding:5vw">
-                <p class="mt-5 " style="font-family:cursive;" >COME TOGETHER...<br>LEARN TOGETHER...<br>GROW TOGETHER...</p>
-                <button type="button" class="btn btn-secondary" style="font-size: 3vw;">Join Us</button>
-            </div>
-            
-        </div>
-    </section>
-   
-    <!--About-->
-    <section>
-        <div class="container-fluid py-5">
-            <h1 class="text-center">About the club</h1>
-            <p class="text-center">Key features of our club</p>
-            <div class="row">
-                <div class="col-sm-3 text-center motto">
-                    <h1> <i class="fas fa-heart "></i></h1>
-                    <h3 >Motto</h3>
-                    <p>Come Together.. <br>Learn Together.. <br>Grow Together...</p>
-                </div>
-                <div class="col-sm-3 text-center passion">
-                    <h1> <i class="fas fa-heart "></i></h1>
-                    <h3 >passion</h3>
-                    <p >To help others in reching to their dreams. </p>
-                </div>
-                <div class="col-sm-3 text-center mission">
-                    <h1> <i class="fa fa-bullseye"></i></h1>
-                    <h3>Mission</h3>
-                    <p>To make students technically aware,so that they may work accordingly.</p>
-                </div>
-                <div class="col-sm-3 text-center vision">
-                   <h1> <i class="fas fa-eye "></i></h1>
-                    <h3 >Future Goals</h3>
-                    <p>To bring some new technologies like IOT,Android,Artificial Intelligence,Machine Learning etc. in our college.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Team-->
-    <section>
-        <div class="container-fluid py-5 " style="background-color: rgb(229, 226, 226);">
-            <h1 class="text-center">THE TEAM</h1>
-            <p class="text-center">The ones who run this club</p>
-            <div class="row">
-                
-                {% for heads in headss %}
-                <div class="col-sm-3 p-4 ">
-                    <div class="team-single">
-                        <div class="content-area">
-                            <div class="side1">
+<section class="bgimg-1">
+	<div class="container-fluid focus mt-0 ">
+		<div class=" text-white mt-5" style="font-size: 5vw;margin:10vw ;padding:5vw">
+			<p class="mt-5 " style="font-family:cursive;">COME TOGETHER...<br>LEARN TOGETHER...<br>GROW TOGETHER...</p>
+			<button type="button" class="btn btn-secondary" style="font-size: 3vw;">Join Us</button>
+		</div>
 
-                                <div class="card shadow ">
-                                    <div class="card-body text-center">
-                                        <div class="img-area">
+	</div>
+</section>
 
-                                            <a href=" {{ heads.get_absolute_url }} " >
-                                                <img src="{{ heads.pic.url }}" alt="Pic" class="img-fluid" >
-                                            </a>
-                                        </div>
-                                            <h2 class="membername">{{ heads.first_name }} {{ heads.last_name }}</h2>
-                                            <p class="text-secondary h5">{{ heads.title }}</p>
-                                            
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="side2">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h2 class="membername">{{ heads.first_name }} {{ heads.last_name }}</h2>
-                                        <p>{{ member.description }}</p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam tempora, possimus autem repudiandae? Eos nam alias 
-                                         <ul class="list-inline">
-                                             <li class="list-inline-item">
-                                                 <a href="" class="social-link">
-                                                     <i class="fab fa-facebook-square" aria-hidden="true"></i>
-                                                 </a>
-                                             </li>
-                                             <li class="list-inline-item">
-                                                <a href="" class="social-link">
-                                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="" class="social-link">
-                                                   <i class="fab fa-github-square" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                         </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            
-                
-            </div>
-            <div class="text-center">
-                <button type="button" class="" data-toggle="collapse" data-target="#rem"><i class="fas fa-chevron-circle-down" style="text-size:45px;"></i>More Members</button>
-            </div>
-            <div class="row collapse" id="rem">
-                {% for member in members %}
+<!--About-->
+<section>
+	<div class="container-fluid py-5">
+		<h1 class="text-center">About the club</h1>
+		<p class="text-center">Key features of our club</p>
+		<div class="row">
+			<div class="col-sm-3 text-center motto">
+				<h1> <i class="fas fa-heart "></i></h1>
+				<h3>Motto</h3>
+				<p>Come Together.. <br>Learn Together.. <br>Grow Together...</p>
+			</div>
+			<div class="col-sm-3 text-center passion">
+				<h1> <i class="fas fa-heart "></i></h1>
+				<h3>passion</h3>
+				<p>To help others in reching to their dreams. </p>
+			</div>
+			<div class="col-sm-3 text-center mission">
+				<h1> <i class="fa fa-bullseye"></i></h1>
+				<h3>Mission</h3>
+				<p>To make students technically aware,so that they may work accordingly.</p>
+			</div>
+			<div class="col-sm-3 text-center vision">
+				<h1> <i class="fas fa-eye "></i></h1>
+				<h3>Future Goals</h3>
+				<p>To bring some new technologies like IOT,Android,Artificial Intelligence,Machine Learning etc. in our
+					college.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!--Team-->
+<section>
+	<div class="container-fluid py-5 " style="background-color: rgb(229, 226, 226);">
+		<h1 class="text-center">THE TEAM</h1>
+		<p class="text-center">The ones who run this club</p>
+		<div class="row">
 
-                <div class="col-sm-3 p-4 ">
-                    <div class="team-single">
-                        <div class="content-area">
-                            <div class="side1">
+			{% for head in heads %}
+			<div class="col-sm-3 p-4 ">
+				<div class="team-single">
+					<div class="content-area">
+						<div class="side1">
 
-                                <div class="card shadow ">
-                                    <div class="card-body text-center">
-                                        <div class="img-area">
+							<div class="card shadow ">
+								<div class="card-body text-center">
+									<div class="img-area">
 
-                                            <a href=" {{ member.get_absolute_url }} " >
-                                                <img src="{{ member.pic.url }}" alt="Pic" class="img-fluid" >
-                                            </a>
-                                        </div>
-                                            <h2 class="membername">{{ member.first_name }} {{ member.last_name }}</h2>
-                                            <p class="text-secondary h5">{{ member.title }}</p>
-                                            
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="side2">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h2 class="membername">{{ member.first_name }} {{ member.last_name }}</h2>
-                                        <p>{{ member.description }}</p>
-                                        
-                                         <ul class="list-inline">
-                                             <li class="list-inline-item">
-                                                 <a href="" class="social-link">
-                                                     <i class="fab fa-facebook-square" aria-hidden="true"></i>
-                                                 </a>
-                                             </li>
-                                             <li class="list-inline-item">
-                                                <a href="" class="social-link">
-                                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="" class="social-link">
-                                                   <i class="fab fa-github-square" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                         </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                {% endfor %}
-            </div>
-               
-        </div>
-    </section>
-    <!--Stats-->
-    <section>
-        <div class="container-fluid p-5 bgimg-2 text-light">
-            <div class="row">
-                <div class="col-sm-3 text-center">
-                    <h1>25 </h1>
-                    <h2>Members</h2>
-                </div>
-                <div class="col-sm-3 text-center">
-                    <h1>10+</h1>
-                    <h2>Events</h2>
-                </div>
-                <div class="col-sm-3 text-center">
-                    <h1>33+</h1>
-                    <h2>Members</h2>
-                </div>
-                <div class="col-sm-3 text-center">
-                    <h1>25 </h1>
-                    <h2>Members</h2>
-                </div>
-            </div>
-        </div>
+										<img src="{{ head.pic.url }}" alt="Pic" class="img-fluid">
 
-    </section>
-    <!--work-->
-    <section>
-        <div class="container-fluid" style="height: 400px;">
-            <h1 class="text-center">OUR WORK</h1>
-        </div>
-    </section>
-    
+									</div>
+									<h2 class="membername">{{ head.first_name }} {{ head.last_name }}</h2>
+									<p class="text-secondary h5">{{ head.title }}</p>
+
+								</div>
+							</div>
+
+						</div>
+						<div class="side2">
+							<div class="card">
+								<div class="card-body text-center">
+									<a href=" {{ head.get_absolute_url }} ">
+										<h2 class="membername">{{ head.first_name }} {{ head.last_name }}</h2>
+									</a>
+									<p>{{ head.description }}</p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
+									tempora, possimus autem repudiandae? Eos nam alias
+									<ul class="list-inline">
+										<li class="list-inline-item">
+											<a href="{{ head.facebook }}" class="social-link" target="_blank">
+												<i class="fab fa-facebook-square" aria-hidden="true"></i>
+											</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="{{ head.linkedin }}" class="social-link" target="_blank">
+												<i class="fab fa-linkedin" aria-hidden="true"></i>
+											</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="{{ head.github }}" class="social-link" target="_blank">
+												<i class="fab fa-github-square" aria-hidden="true"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+
+		</div>
+		<div class="text-center">
+			<button type="button" class="" data-toggle="collapse" data-target="#rem"><i
+					class="fas fa-chevron-circle-down" style="text-size:45px;"></i>More Members</button>
+		</div>
+		<div class="row collapse" id="rem">
+			{% for member in members %}
+
+			<div class="col-sm-3 p-4 ">
+				<div class="team-single">
+					<div class="content-area">
+						<div class="side1">
+
+							<div class="card shadow ">
+								<div class="card-body text-center">
+									<div class="img-area">
+
+
+										<img src="{{ member.pic.url }}" alt="Pic" class="img-fluid">
+									</div>
+									<h2 class="membername">{{ member.first_name }} {{ member.last_name }}</h2>
+									<p class="text-secondary h5">{{ member.title }}</p>
+
+								</div>
+							</div>
+
+						</div>
+						<div class="side2">
+							<div class="card">
+								<div class="card-body text-center">
+									<a href=" {{ member.get_absolute_url }} ">
+										<h2 class="membername"> {{ member.first_name }} {{ member.last_name }}</h2>
+										<p>{{ member.description }}</p>
+									</a>
+
+									<ul class="list-inline">
+										<li class="list-inline-item">
+											<a href="{{ member.facebook }}" class="social-link" target="_blank">
+												<i class="fab fa-facebook-square" aria-hidden="true"></i>
+											</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="{{ member.linkedin }}" class="social-link" target="_blank">
+												<i class="fab fa-linkedin" aria-hidden="true"></i>
+											</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="{{ member.github }}" class="social-link" target="_blank">
+												<i class="fab fa-github-square" aria-hidden="true"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{% endfor %}
+		</div>
+
+	</div>
+</section>
+<!--Stats-->
+<section>
+	<div class="container-fluid p-5 bgimg-2 text-light">
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<h1>25 </h1>
+				<h2>Members</h2>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h1>10+</h1>
+				<h2>Events</h2>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h1>33+</h1>
+				<h2>Members</h2>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h1>25 </h1>
+				<h2>Members</h2>
+			</div>
+		</div>
+	</div>
+
+</section>
+<!--work-->
+<section>
+	<div class="container-fluid" style="height: 400px;">
+		<h1 class="text-center">OUR WORK</h1>
+	</div>
+</section>
+
 {% endblock %}

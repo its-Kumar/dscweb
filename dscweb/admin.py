@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Member
-from .models import Heads
+from .models import Head
 
 admin.site.register(Member)
-admin.site.register(Heads)
-
+admin.site.register(Head)
