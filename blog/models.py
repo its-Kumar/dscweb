@@ -49,13 +49,15 @@ class BlogPostQuerySet(models.QuerySet):
 
 
 class BlogPost(models.Model):
-    user = models.ForeignKey('auth.User', default=1, on_delete=models.SET_DEFAULT)
+    user = models.ForeignKey('auth.User', default=1,
+                             on_delete=models.SET_DEFAULT)
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to=get_upload_path, blank=True, null=True)
     slug = models.SlugField(unique=True, default='',
                             editable=False, blank=False)
     content = models.TextField(null=True, blank=True)
-    publish_date = models.DateTimeField(auto_now_add=False, null=True, blank=True)
+    publish_date = models.DateTimeField(
+        auto_now_add=False, null=True, blank=True)
     timestamp = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
 
@@ -97,3 +99,19 @@ class BlogPost(models.Model):
 class Blog:
     title = "hello world"
     content = "something cool"
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        BlogPost, on_delete=models.CASCADE, related_name="comments")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return "Comment {} by {}".format(self.body, self.name)

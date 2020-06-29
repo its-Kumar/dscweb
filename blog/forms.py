@@ -1,5 +1,5 @@
 from django import forms
-from .models import BlogPost
+from .models import BlogPost, Comment
 
 
 class BlogPostForm(forms.Form):
@@ -23,3 +23,9 @@ class BlogModelForm(forms.ModelForm):
             raise forms.ValidationError(
                 "This title has already been used, Please enter another title.")
         return title
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['name', 'email', 'body']

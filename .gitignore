@@ -1,9 +1,25 @@
+### Django ###
+*.log
+*.pot
+
+#pycache
+*.pyc
+__pycache__/
+
+### Django.Python Stack ###
+*.py[cod]
+*$py.class
+
 # Vs code
 .vscode
 
-#pycache
-__pycache__
-.pyc
-
 # Database
 db.sqlite3
+db.sqlite3-journal
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/

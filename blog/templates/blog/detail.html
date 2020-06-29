@@ -1,21 +1,61 @@
 {% extends "base.html" %}
 
-{% block doc_title %} - {{ object.title }} {% endblock %}
+{% block doc_title %} - {{ blog_post.title }} {% endblock %}
 
 {% block content %}
-    <div class="mt-5 " style="height: 20px;"> </div>
-    <div class="container" style="padding-top: 25px;"> 
-        <div class="row">
-            {% include 'blog/list-inline.html' with blog_post=object detail=True %}
+<div class="mt-5 " style="height: 20px;"> </div>
+<div class="container" style="padding-top: 25px;">
+    <div class="row">
+        <div class="card-body">
+            {% include 'blog/list-inline.html' with blog_post=blog_post detail=True %}
+        </div>
+        {% if request.user.is_authenticated %}
+        {% if request.user == blog_post.user %}
+        <div class="col-12">
+            <a class="btn btn-secondary" href="{{ blog_post.get_edit_url }}">Edit</a>
+            <a class="btn btn-danger" href="{{ blog_post.get_delete_url }}">Delete</a>
+        </div>
+        {% endif %}
+        {% endif %}
 
-            {% if request.user.is_authenticated %}
-                {% if request.user == object.user %}
-                    <div class="col-12">
-                    <a class ="btn btn-secondary" href="{{ object.get_edit_url }}">Edit</a>
-                    <a class ="btn btn-danger" href="{{ object.get_delete_url }}">Delete</a>
-                    </div>
-                {% endif %}    
-            {% endif %}
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <div class="card-body">
+                <!-- comments -->
+                {% with comments.count as total_comments %}
+                <h2>{{ total_comments }} comments</h2>
+
+                <p>
+                    {% endwith %} {% for comment in comments %}
+                </p>
+
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">
+                            {{ comment.created_on }}
+                        </span>
+                    </p>
+                    {{ comment.body | linebreaks }}
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <div class="card-body">
+                {% if new_comment %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting moderation
+                </div>
+                {% else %}
+                <h3>Leave a comment</h3>
+                <form method="POST" action='.' style="margin-top: 1.3em;">
+                    {{ comment_form.as_p }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                </form>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

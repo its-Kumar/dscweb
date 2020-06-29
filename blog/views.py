@@ -3,7 +3,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import BlogPost
-from .forms import BlogModelForm, BlogPostForm
+from .forms import BlogModelForm, BlogPostForm, CommentForm
 # from django.utils import timezone
 
 # Create your views here.
@@ -51,9 +51,20 @@ def blog_post_create_view(request):
 """
 @login_required
 def blog_post_detail_view(request, slug):
-    obj = get_object_or_404(BlogPost, slug=slug)
+    post = get_object_or_404(BlogPost, slug=slug)
+    comments = post.comments.filter(active=True).order_by("-created_on")
     template_name = "blog/detail.html"
-    context = {"object": obj}
+    new_comment = None
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.post = post
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+    context = {"blog_post": post, "comments": comments,
+               "new_comment": new_comment, "comment_form": comment_form}
     return render(request, template_name, context)
 
 
