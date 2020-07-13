@@ -2,6 +2,8 @@
 
   **DSC(Developer Student Club)** is a official Technical club running in [Rajkiya Engineering College, Bijnor](http://recb.ac.in/) since 2019. DSCWEB is a web project to build website for **DSC club.**
 
+  ![dscweb](dscweb_image.png)
+
 ## Links:
 
 - [Facebook](https://www.facebook.com/dscrecbijnor/)
