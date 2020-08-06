@@ -1,0 +1,16 @@
+body{
+    margin:0px;
+}
+    
+.card{
+    margin-top:15%;
+}
+.inner{
+    overflow:hidden;
+}
+.inner img{
+    transition:all 1.5s ease;
+}
+.inner:hower img{
+    transform:scale(1.5);
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block doc_title %} -Dscblend
+{% endblock doc_title %}
+
+{% block content %}
+
+<section style="padding-top: 80px">
+    <div class="container-fluid p-4 bgimg-2 text-light">
+        <div class="row">
+            <div class="col-sm-3 text-center">
+                <h1 style="font-family:cursive;"><u>DSC Blend: </u></h1>
+            </div>
+            <hr/>
+            <br/>
+       </div>  
+    </div> 
+    
+    <p>This is our first event i the college. The aim of this event is to recognise the
+        talented students from 1st year and to encourage the students towards programming. </p>   
+        <img src="{%static 'images/dscblend.jpeg' %}" class="card-img-top" alt="pic" style="float:right"  height="500px" width="30px">
+    </section> 
+
+{% endblock %}
