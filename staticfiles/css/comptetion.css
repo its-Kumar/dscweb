@@ -8,9 +8,5 @@ body{
 .inner{
     overflow:hidden;
 }
-.inner img{
-    transition:all 1.5s ease;
-}
-.inner:hower img{
-    transform:scale(1.5);
+
 }

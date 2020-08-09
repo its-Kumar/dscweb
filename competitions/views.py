@@ -2,9 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def home_view(request):
-    return render(request, 'competitions/home.html'),
-def dscblend(request):
-    return render(request,'competitions/dscblend.html')
+    return render(request, 'competitions/home.html')
 
 
     
