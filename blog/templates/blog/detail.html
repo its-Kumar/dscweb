@@ -3,22 +3,53 @@
 {% block doc_title %} - {{ blog_post.title }} {% endblock %}
 
 {% block content %}
-<div class="mt-5 " style="height: 20px;"> </div>
-<div class="container" style="padding-top: 25px;">
-    <div class="row">
-        <div class="card-body">
-            {% include 'blog/list-inline.html' with blog_post=blog_post detail=True %}
-        </div>
-        {% if request.user.is_authenticated %}
-        {% if request.user == blog_post.user %}
-        <div class="col-12">
-            <a class="btn btn-secondary" href="{{ blog_post.get_edit_url }}">Edit</a>
-            <a class="btn btn-danger" href="{{ blog_post.get_delete_url }}">Delete</a>
-        </div>
-        {% endif %}
-        {% endif %}
 
-        <div class="col-md-8 card mb-4  mt-3 ">
+    
+    <div class="container mt-5" style="padding-top: 25px;"> 
+        
+        <div class="card">
+             <div class="card-header py-0 "  >
+                <h3 class="card-title text-center mt-2">{{ object.title }}</h3>
+                <small class="text-muted float-right"> By-{{ object.user }} </small>
+                <small class="text-muted"> {{ object.publish_date }} </small>
+             </div>
+             <div class="card-body">
+                <div class="mx-auto" >
+                        {% if object.image %}
+                        <a href="{{ object.get_absolute_url }}">
+                        <div class="mx-auto text-center" style="height:300px;">
+                        <img src = "{{ object.image.url }}" class=' img-fluid h-100 mx-auto' />
+                        </div>
+                        </a>
+                        {% endif %}
+                </div>
+                <div>
+                <p class="card-text " style="height: " >
+                    
+                    {% if truncate %}
+                        {{ object.content|linebreaks|truncatewords:30 }}
+                    {% else %}
+                        {{ object.content|linebreaks}}
+                    {% endif %}
+                </p>
+                </div>
+             </div>
+             <div class="card-footer">
+                
+            </div>
+        </div>
+          
+          
+            {% if request.user.is_authenticated %}
+                {% if request.user == object.user %}
+                    <div class="col-12">
+                    <a class ="btn btn-secondary" href="{{ object.get_edit_url }}">Edit</a>
+                    <a class ="btn btn-danger" href="{{ object.get_delete_url }}">Delete</a>
+                    </div>
+                {% endif %}    
+            {% endif %}
+     
+      <div class="col-md-8 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- comments -->
                 {% with comments.count as total_comments %}
@@ -58,5 +89,6 @@
             </div>
         </div>
     </div>
+
 </div>
 {% endblock %}

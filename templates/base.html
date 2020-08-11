@@ -14,6 +14,7 @@
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
 	<link rel="stylesheet" href="{%static 'css/footer.css'%}" type="text/css">
 	<link rel="stylesheet" href="{%static 'css/dscstyle.css'%}" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Bangers|Great+Vibes|Lobster|Permanent+Marker&display=swap"
@@ -25,20 +26,71 @@
 			min-height: 100vh;
 			background-position: center;
 			background-size: cover;
-			background-image: url("{%static 'images/pcb.jpg'%}");
+			background-image: url("https://source.unsplash.com/weekly?code,together");
 		}
 
 		.bgimg-2 {
 			background-attachment: fixed;
 			background-image: url("{%static 'images/459024.jpg'%}");
+			background-size: 200vh;
 
 		}
+
+		.swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+	  border:2px solid black;
+	  background-color:red;
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+	  
+	  
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+	.swiper-image{
+				height:100px;
+	}
+
+		@media screen and (min-width: 480px){
+						.swiper-image{
+											height:200px;
+								}
+
+		}
+	
+@media screen and (min-width: 760px){
+						.swiper-image{
+											height:300px;
+								}
+
+		}
+	
+
+
 	</style>
 </head>
 
 <body style="padding-top:0px;">
 	{% include 'navbar.html' %}
-
+	<main>
 	<div class="site-container">
 
 		{% block content %}
@@ -46,6 +98,7 @@
 		{% endblock %}
 
 	</div>
+	</main>
 	{% include 'footer.html' %}
 
 	<!-- Optional JavaScript -->
@@ -61,11 +114,13 @@
 		crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
 		integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+		<script src="dark-mode-switch.min.js"></script>
 	<script>
+	
 		$(document).mousemove(function (m) {
 			var X = m.pageX;
 			var Y = m.pageY;
-			$('.focus').css('background', 'radial-gradient(circle at ' + X + 'px ' + Y + 'px,transparent, rgba(0,0,1,1) 40%)')
+			$('.focus').css('background', 'radial-gradient(circle at ' + X + 'px ' + Y + 'px,transparent, rgba(0,0,1,1) 70%)')
 		})
 
 
@@ -95,6 +150,9 @@
 			})
 		});
 	</script>
+
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="EbZoo8P1"></script>
 </body>
 
-</html>
+	</html>

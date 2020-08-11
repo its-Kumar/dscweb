@@ -49,8 +49,9 @@ def blog_post_create_view(request):
     context = {'form': form}
     return render(request, template_name, context)
 """
-@login_required
+
 def blog_post_detail_view(request, slug):
+
     post = get_object_or_404(BlogPost, slug=slug)
     comments = post.comments.filter(active=True).order_by("-created_on")
     template_name = "blog/detail.html"
@@ -89,3 +90,4 @@ def blog_post_delete_view(request, slug):
         return redirect('/blog')
     context = {"object": obj}
     return render(request, template_name, context)
+

@@ -1,24 +1,38 @@
-<div class="col-12 col-md-10 mb-3 mx-auto">
-    <div class="card {% if not blog_post.publish_date %} bg-dark text-light {% endif %} shadow ">
-        <div class="card-body rounded overflow-hidden" style="height: 300px;">
-            <p class=" text-muted">{{ blog_post.user }} | {{ blog_post.publish_date }}</p>
-            <h3 class="card-title text-center">{{ blog_post.title }}</h3>
+<div class="container my-3 mission" >
+
+    <div class="card {% if not blog_post.publish_date %} bg-dark text-light {% endif %} shadow-lg ">
+       <div class="card-header py-0 "  >
+            <h3 class="card-title text-center mt-2">{{ blog_post.title }}</h3>
+            <small class="text-muted float-right"> By-{{ blog_post.user }} </small>
+            <small class="text-muted"> {{ blog_post.publish_date }} </small>
+        </div>
+        <div class="card-body overflow-hidden pt-0 " style="height:200px;">
+            <div style="" class="float-right w-25  ">
             {% if blog_post.image %}
-            <a href="{{ blog_post.get_absolute_url }}">
-                <img src="{{ blog_post.image.url }}" class='card-img-top' /></a>
+                <a href="{{ blog_post.get_absolute_url }}">
+                <div style="height:400px;">
+                <img src = "{{ blog_post.image.url }}" class='card-img-top w-100' />
+                </div>
+                </a>
             {% endif %}
-            <p class="card-text overflow-hidden" style="height: 30px;">
-                <small class="text-muted"> {{ blog_post.publish_date }} </small>
+            </div>
+            <div>
+            <p class="card-text " style="height: " >
+                
                 {% if truncate %}
                 {{ blog_post.content|linebreaks|truncatewords:30 }}
                 {% else %}
                 {{ blog_post.content|linebreaks}}
                 {% endif %}
             </p>
+            </div>
+
         </div>
+        <div class="card-footer text-center py-0">
         {% if not detail %}
         {% if not blog_post.publish_date %} Draft {% endif %}
         <a href="{{ blog_post.get_absolute_url }}" class="btn btn-primary btn-block"> Read More>> </a>
         {% endif %}
+        </div>
     </div>
 </div>

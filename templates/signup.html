@@ -11,13 +11,12 @@
 		<form method="post" class="">
 
 
-
-
-			{% csrf_token %}
-			{{ form.as_p }}
-
-
-			<button class="btn btn-primary">Submit</button>
+			<div class="form-group">
+				{% csrf_token %}
+				
+				{{ form.as_p }}
+				<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+			  </div>
 		</form>
 
 	</div>
