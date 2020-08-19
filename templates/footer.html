@@ -97,6 +97,7 @@
 		<!-- Footer Links -->
 
 		<hr>
+		{% if not user.is_authenticated %}
 
 		<!-- Call to action -->
 		<ul class="list-unstyled list-inline text-center py-2">
@@ -108,7 +109,7 @@
 			</li>
 		</ul>
 		<!-- Call to action -->
-
+		{% endif %}
 		<hr>
 
 		<!-- Social buttons -->

@@ -25,33 +25,36 @@
 			<li class="nav-item active mx-2">
 				<a class="nav-link" href="{% url 'about' %}"><i class="fa fa-info"></i> About</a>
 			</li>
-			
+
 			<li class="nav-item active text-center my-auto dropdown-toggle dropdown mx-2 ">
-				
-					<a href="" class="text-dark text-decoration-none disable ">Events</a>
-				<!--<a class="nav-link" href="{% url 'events:home' %}"><i class="fas fa-calendar-check"></i> Events</a>-->	
-					<div class="dropdown-content m-0 shadow-lg bg-light">
-						<ul class="itemul " >
-							<li class="active item"><a class="nav-link" href="{% url 'competitions:home' %}"><i
-								class="fas fa-puzzle-piece"></i>Competitions</a></li>
-							<li class="active item"><a class="nav-link" href="{% url 'training:home' %}"><i class="fas fa-terminal"></i>Trainings</a></li>
-							<li class="active item"><a class="nav-link" href="{% url 'workshops:home' %}"><i class="fas fa-wrench"></i>Workshops</a></li>
-						</ul>
-					</div>
-				
+				<i class="fas fa-calendar-check"></i>
+				<a href="" class="text-dark text-decoration-none disable ">Events</a>
+				<!--<a class="nav-link" href="{% url 'events:home' %}">Events</a>-->
+				<div class="dropdown-content m-0 shadow-lg bg-light">
+					<ul class="itemul ">
+						<li class="active item"><a class="nav-link" href="{% url 'competitions:home' %}"><i
+									class="fas fa-puzzle-piece"></i>Competitions</a></li>
+						<li class="active item"><a class="nav-link" href="{% url 'training:home' %}"><i
+									class="fas fa-terminal"></i>Trainings</a></li>
+						<li class="active item"><a class="nav-link" href="{% url 'workshops:home' %}"><i
+									class="fas fa-wrench"></i>Workshops</a></li>
+					</ul>
+				</div>
+
 			</li>
-			
+
 			<li class="nav-item active mx-2 dropdown-toggle dropdown text-center my-auto">
 				{% if user.is_authenticated %}
-						Hi {{ user.username }}!
-			
-					<div class="dropdown-content m-0 shadow-lg bg-light">
-						<ul class="itemul " >
-							
-							<li class="active item"><a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-user ">Logout</i></a></li>
-							<li class="active item">Settings</li>
-						</ul>
-					</div>
+				<i class="fas fa-user"></i> Hi {{ user.username }}!
+
+				<div class="dropdown-content m-0 shadow-lg bg-light">
+					<ul class="itemul ">
+
+						<li class="active item"><a class="nav-link" href="{% url 'logout' %}"><i
+									class="fas fa-user ">Logout</i></a></li>
+						<li class="active item">Settings</li>
+					</ul>
+				</div>
 				{% else %}
 				<a class="nav-link" href="{% url 'login' %}"><i class="fas fa-user "></i>Login</a>
 				{% endif %}
@@ -88,47 +91,51 @@
 	</div>
 </nav>
 <style>
-	.butn{
-		
+	.butn {}
+
+	.dropdown {
+		display: inline-block;
+
 	}
-	.dropdown{
-		display:inline-block;
-	
-	}
-	.dropdown-content{
-		z-index:5;
+
+	.dropdown-content {
+		z-index: 5;
 		display: none;
 		position: absolute;
 		margin-top: 20px;
 		border-radius: 5px;
-	    right:0;
-		
-		
+		right: 0;
+
+
 	}
-	.dropdown:hover .dropdown-content{
-		display:block;
+
+	.dropdown:hover .dropdown-content {
+		display: block;
 	}
-	.itemul{
+
+	.itemul {
 		list-style-type: none;
-		padding:0;
+		padding: 0;
 		width: 200px;
-		left:0;
-		
-		
-		
+		left: 0;
+
+
+
 	}
-	.item{
-		position:relative;
-	    left:0;
+
+	.item {
+		position: relative;
+		left: 0;
 		border: .01em solid white;
 	}
-	.item a{
+
+	.item a {
 		color: black;
 		text-decoration: none;
-		left:0;
+		left: 0;
 	}
-	.item:hover{
-			background-color: #e0e0d1;
+
+	.item:hover {
+		background-color: #e0e0d1;
 	}
-	
 </style>

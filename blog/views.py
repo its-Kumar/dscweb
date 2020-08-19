@@ -50,6 +50,7 @@ def blog_post_create_view(request):
     return render(request, template_name, context)
 """
 
+
 def blog_post_detail_view(request, slug):
 
     post = get_object_or_404(BlogPost, slug=slug)
@@ -60,12 +61,17 @@ def blog_post_detail_view(request, slug):
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
+            new_comment.name = request.user
             new_comment.post = post
             new_comment.save()
     else:
         comment_form = CommentForm()
-    context = {"blog_post": post, "comments": comments,
-               "new_comment": new_comment, "comment_form": comment_form}
+    context = {
+        "blog_post": post,
+        "comments": comments,
+        "new_comment": new_comment,
+        "comment_form": comment_form
+    }
     return render(request, template_name, context)
 
 
@@ -90,4 +96,3 @@ def blog_post_delete_view(request, slug):
         return redirect('/blog')
     context = {"object": obj}
     return render(request, template_name, context)
-
