@@ -102,3 +102,15 @@ font-weight: bolder;
 font-size: 28px;
 color: brown;
 }
+
+.login-box{
+    margin-top:150px;
+}
+
+@media screen and (min-width: 480px) {
+
+        .login-box{
+                width: 25%;
+        }
+
+}

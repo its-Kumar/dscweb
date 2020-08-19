@@ -97,6 +97,7 @@
 		<!-- Footer Links -->
 
 		<hr>
+		{% if not user.is_authenticated %}
 
 		<!-- Call to action -->
 		<ul class="list-unstyled list-inline text-center py-2">
@@ -108,7 +109,7 @@
 			</li>
 		</ul>
 		<!-- Call to action -->
-
+		{% endif %}
 		<hr>
 
 		<!-- Social buttons -->
@@ -124,7 +125,7 @@
 				</a>
 			</li>
 			<li class="list-inline-item">
-				<a class="btn-floating btn-gplus mx-1" href>
+				<a class="btn-floating btn-gplus mx-1" href="mailto:dscrecbijnor@gmail.com">
 					<i class="fab fa-google-plus-g"> </i>
 				</a>
 			</li>

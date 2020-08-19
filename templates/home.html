@@ -75,7 +75,7 @@
 							<div class="card">
 								<div class="card-body text-center">
 									<a href=" {{ head.get_absolute_url }} ">
-										<h2 class="membername">{{ head.first_name }} {{ head.last_name }}</h2>
+										<h2 class="membername text-decoration-none">{{ head.first_name }} {{ head.last_name }}</h2>
 									</a>
 									<p>{{ head.description }}</p>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
@@ -109,7 +109,7 @@
 		</div>
 		<div class="text-center">
 			<button type="button" class="" data-toggle="collapse" data-target="#rem"><i
-					class="fas fa-chevron-circle-down" style="text-size:45px;"></i>More Members</button>
+					class="dropdown-toggle" style="text-size:45px;"></i>More Members</button>
 		</div>
 		<div class="row collapse" id="rem">
 			{% for member in members %}
@@ -195,10 +195,148 @@
 
 </section>
 <!--work-->
-<section>
-	<div class="container-fluid" style="height: 400px;">
-		<h1 class="text-center">OUR WORK</h1>
+<section class="my-3">
+	<div>
+		<h1 class="text-center  my-5">Our Work</h1>
 	</div>
-</section>
 
+
+	 <!-- Swiper -->
+  <div class="swiper-container d-flex">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide card">	
+	  	<div class="w-100 bg-secondary swiper-image" > 
+			<img src="/static/images/logo.png" class="h-100 img-fluid">
+		</div>
+		<div>
+			<h3>Event Name</h3>
+			<p>events detail
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
+									tempora, possimus autem repudiandae? Eos nam alias
+			</p>
+		</div>
+		
+	  </div>
+
+	  
+
+	  <div class="swiper-slide card">	
+	  	<div class="w-100 bg-secondary swiper-image" > 
+			<img src="/static/images/4.jpeg" class="h-100 img-fluid">
+		</div>
+		<div>
+			<h3>DSC Endeavour</h3>
+			<p>events detail
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
+									tempora, possimus autem repudiandae? Eos nam alias
+			</p>
+		</div>
+		
+	  </div>
+
+<div class="swiper-slide card">	
+	  	<div class="w-100 bg-secondary swiper-image" > 
+			<img src="/static/images/5.jpeg" class="h-100 img-fluid">
+		</div>
+		<div>
+			<h3>Code The COVID</h3>
+			<p>events detail
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
+									tempora, possimus autem repudiandae? Eos nam alias
+			</p>
+		</div>
+		
+	  </div>
+
+	  <div class="swiper-slide card">	
+	  	<div class="w-100 bg-secondary swiper-image" > 
+			<img src="/static/images/6.jpeg" class="h-100 img-fluid">
+		</div>
+		<div>
+			<h3>Head Up Your C</h3>
+			<p>events detail
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
+									tempora, possimus autem repudiandae? Eos nam alias
+			</p>
+		</div>
+		
+	  </div>
+
+
+
+	<div class="swiper-slide card">	
+	  	<div class="w-100 bg-secondary swiper-image" > 
+			<img src="/static/images/1.jpeg" class="h-100 img-fluid">
+		</div>
+		<div>
+			<h3>DSC Blend Classes</h3>
+			<p>events detail</p>
+		</div>
+		
+	  </div>
+
+	  <div class="swiper-slide card">	
+	  	<div class="w-100 bg-secondary swiper-image" > 
+			<img src="/static/images/2.jpeg" class="h-100 img-fluid">
+		</div>
+		<div>
+			<h3>Meet Up Progam</h3>
+			<p>events detail</p>
+		</div>
+		
+	  </div>
+
+	  <div class="swiper-slide card">	
+	  	<div class="w-100 bg-secondary swiper-image" > 
+			<img src="/static/images/3.jpeg" class="h-100 img-fluid">
+		</div>
+		<div>
+			<h3>C programming Classes</h3>
+			<p>events detail</p>
+		</div>
+		
+	  </div>
+		
+      
+    </div>
+	 <!-- Add Arrows -->
+    <div class="swiper-button-next" id="btn-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      centeredSlides: true,
+	  loop: true,
+	  
+	   navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+		dynamicBullets: true,
+      },
+    });
+
+	setTimeout(function(){
+		document.getElementById('btn-next').click()
+	},10);
+
+	setInterval(function(){
+		document.getElementById('btn-next').click()
+	},5000);
+  </script>
+</section>
 {% endblock %}
