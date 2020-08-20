@@ -2,5 +2,9 @@
 Django>=3.0.5
 Pillow
 pytz
-asgiref==3.2.7
+asgiref>=3.2.7
 sqlparse>=0.2.2
+gunicorn
+django-heroku
+whitenoise
+psycopg2-binary
