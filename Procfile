@@ -1,1 +1,1 @@
-web: bin/start-pgbouncer-stunnel gunicorn dscweb.wsgi
+web: gunicorn dscweb.wsgi
