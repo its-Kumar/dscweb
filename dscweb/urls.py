@@ -29,13 +29,11 @@ urlpatterns = [
     path('blog-new/', blog_post_create_view, name='new_blog'),
     path('blog/', include('blog.urls', namespace='blog')),
     path('courses/', include('courses.urls', namespace='courses')),
-    path('competitions/', include('competitions.urls', namespace='competitions')),
-    path('events', include('events.urls', namespace='events')),
+    path('competitions/', include('competitions.urls',
+                                  namespace='competitions')),
     path('training/', include('training.urls', namespace='training')),
     path('workshops/', include('workshops.urls', namespace='workshops')),
-
 ]
-
 
 if settings.DEBUG:
     # test mode
