@@ -3,20 +3,21 @@
 {% block head_title %}Form {% endblock %}
 
 {% block content %}
-    <div class="container" style="padding-top: 25px;">
+<div class="container" style="padding-top: 25px;">
     {% if title %}
-        <h1> {{ title }} </h1>
+    <h1> {{ title }} </h1>
     {% endif %}
 
-    <form method="POST" action="." enctype='multipart/form-data'> {% csrf_token %}
+    <form method="POST" action="." enctype='multipart/form-data'>
+        {% csrf_token %}
         <!--
             <input type="text" name="full_name">
         <input type="email" name="email">
         <textarea name="content"></textarea>
     -->
-    {{ form.as_p }}
-    <button type="submit">Post </button>
+        {{ form.as_p }}
+        <button type="submit">Post </button>
     </form>
-    </div>
+</div>
 
 {% endblock %}

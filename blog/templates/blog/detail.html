@@ -3,14 +3,24 @@
 {% block doc_title %} - {{ blog_post.title }} {% endblock %}
 
 {% block content %}
-
+<style>
+    .profile-pic {
+        max-width: 30px;
+        max-height: 30px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
 
 <div class="container mt-5" style="padding-top: 25px;">
 
     <div class="card border ">
         <div class="card-header py-0 ">
+
+            <small class="text-muted float-left">
+                <img class="profile-pic" src="{{blog_post.user.profile.profile_pic.url }}"> {{ blog_post.user }}
+            </small>
             <h3 class="card-title text-center mt-2">{{ blog_post.title }}</h3>
-            <small class="text-muted float-right"> By- <i class="fas fa-user"></i>{{ blog_post.user }} </small>
             <small class="text-muted"> {{ blog_post.publish_date }} </small>
         </div>
         <div class="card-body bg-dark text-light text-center ">
@@ -55,7 +65,7 @@
             {% with comments.count as total_comments %}
             <small>{{ total_comments }} comments</small>
             <br>
-            <i class="fas fa-user"></i> {{user.username}}
+            <img class="profile-pic" src="{{user.profile.profile_pic.url }}"> {{user.username}}
             <hr>
             <p>
                 {% endwith %}
@@ -64,7 +74,7 @@
 
             <div class="comments" style="padding: 10px;">
                 <p class="font-weight-bold">
-                    <i class="fas fa-user"></i> {{ comment.name }}
+                    <img class="profile-pic" src="{{user.profile.profile_pic.url }}">{{ comment.name }}
                     <span class=" text-muted font-weight-normal">
                         {{ comment.created_on }}
                     </span>
