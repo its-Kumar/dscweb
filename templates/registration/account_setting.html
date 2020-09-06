@@ -29,6 +29,7 @@
                 {% csrf_token %}
                 {{form.as_p}}
 
+                Change Your Password<a href="{% url 'reset_password' %}"> Here </a><br>
                 <input class="btn btn-primary" type="submit" name="Update Information">
             </form>
         </div>
