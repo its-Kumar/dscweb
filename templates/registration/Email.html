@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -12,7 +11,8 @@
 
 <body style="background: #f5f8fa;font-family: 'Roboto', sans-serif;">
     <div style="width: 90%;max-width:600px;margin: 20px auto;background: #ffffff;">
-        <img src="/static/images/logo.png" alt="sr" width="50px" class="img-fluid" height="50px">
+        <img src="http://{{ request.get_host }}/static/images/logo.png" alt="sr" width="50px" class="img-fluid"
+            height="50px">
         <a href="{% url 'home' %}" style="font-family: 'Bangers', cursive; font-size:25px">DEVELOPER
             STUDENT CLUB</a>
         <section style="margin: 0 15px;color:#425b76;">
@@ -21,7 +21,8 @@
             <p style="font-size:15.5px;font-weight: bold;margin:40px 20px 15px 20px;">Hi {{username}}, Thank you for
                 registering with us.<br>
                 We are happy to see you on board!<br>
-                Please visit <a href="{% url 'login' %}">here to login.</a>
+                Please visit here to login.<br>
+                http://{{ request.get_host}}/{% url 'login' %}
                 <br><br>
                 Happy Coding!
                 <br><br>
