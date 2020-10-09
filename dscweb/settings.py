@@ -135,7 +135,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR),
                                      'static_cdn_test')
-#STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')  # LIVE CDN AWS S3
+# STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')  # LIVE CDN AWS S3
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
@@ -156,7 +156,7 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'events.dscrecbijnor@gmail.com'
 EMAIL_HOST_PASSWORD = 'gycitowrmbeqssmc'
-#EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+# EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
