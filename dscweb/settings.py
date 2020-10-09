@@ -26,7 +26,7 @@ SECRET_KEY = 'qb^uw=)al7t@$0(6$=v%-1yd=484)abu09rk&n6y31_#mvhu6a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dsc-web.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['dscrecbijnor.herokuapp.com', '127.0.0.1:8000']
 
 # Application definition
 
@@ -82,12 +82,8 @@ WSGI_APPLICATION = 'dscweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dscdb',
-        'USER': 'postgres',
-        'PASSWORD': 'kumar',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
