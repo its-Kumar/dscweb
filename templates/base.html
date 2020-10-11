@@ -3,143 +3,152 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="{%static 'images/logo.png'%}" rel="icon" />
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href="{%static 'images/logo.png'%}" rel="icon" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
-	<link rel="stylesheet" href="{%static 'css/dscstyle.css'%}" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Bangers|Great+Vibes|Lobster|Permanent+Marker&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-	<title>DSC{% block doc_title %}{% endblock %}</title>
-	<style>
-		.bgimg-1 {
-			min-height: 100vh;
-			background-position: center;
-			background-size: cover;
-			background-image: url("https://source.unsplash.com/weekly?code,together");
-		}
-
-		.bgimg-2 {
-			background-attachment: fixed;
-			background-image: url("{%static 'images/459024.jpg'%}");
-			background-size: 200vh;
-
-		}
-
-		.swiper-container {
-			width: 100%;
-			height: 100%;
-		}
-
-		.swiper-slide {
-			border: 2px solid black;
-			background-color: red;
-			text-align: center;
-			font-size: 18px;
-			background: #fff;
-
-
-
-			/* Center slide text vertically */
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: -webkit-flex;
-			display: flex;
-			-webkit-box-pack: center;
-			-ms-flex-pack: center;
-			-webkit-justify-content: center;
-			justify-content: center;
-			-webkit-box-align: center;
-			-ms-flex-align: center;
-			-webkit-align-items: center;
-			align-items: center;
-		}
-
-		.swiper-image {
-			height: 100px;
-		}
-
-		@media screen and (min-width: 480px) {
-			.swiper-image {
-				height: 200px;
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+			integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
+		<link rel="stylesheet" href="{%static 'css/dscstyle.css'%}" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Bangers|Great+Vibes|Lobster|Permanent+Marker&display=swap"
+			rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+		<link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+		<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+		<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+		<link rel="stylesheet" type="text/css" href="{%static 'styles/main_styles.css' %}">
+		<link rel="stylesheet" type="text/css" href="{%static 'styles/responsive.css' %}">
+		
+		
+		<!-- Title -->
+		<title>DSC{% block doc_title %}{% endblock %}</title>
+		<style>
+			.bgimg-1 {
+				min-height: 100vh;
+				background-position: center;
+				background-size: cover;
+				background-image: url("https://source.unsplash.com/weekly?code,together");
 			}
 
-		}
+			.bgimg-2 {
+				background-attachment: fixed;
+				background-image: url("{%static 'images/459024.jpg'%}");
+				background-size: 200vh;
 
-		@media screen and (min-width: 760px) {
-			.swiper-image {
-				height: 300px;
 			}
 
-		}
-	</style>
-</head>
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
 
-<body style="padding-top:0px;">
-	{% include 'navbar.html' %}
-	<main>
-		<br>
-		<div class="site-container">
-			<br>
-			{% block content %}
-			replace me
-			{% endblock %}
-
-		</div>
-	</main>
-	{% include 'footer.html' %}
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
-		integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
-	<script src="dark-mode-switch.min.js"></script>
-	<script>
-
-		$(document).mousemove(function (m) {
-			var X = m.pageX;
-			var Y = m.pageY;
-			$('.focus').css('background', 'radial-gradient(circle at ' + X + 'px ' + Y + 'px,transparent, rgba(0,0,1,1) 70%)')
-		})
+			.swiper-slide {
+				border: 2px solid black;
+				background-color: red;
+				text-align: center;
+				font-size: 18px;
+				background: #fff;
 
 
-		$(document).ready(function () {
-			$('.motto').waypoint(function (direction) {
-				$('.motto').addClass('animated animate__animated animate__fadeInLeft animate__slow')
-			}, {
-				offset: '600px'
+
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+
+			.swiper-image {
+				height: 100px;
+			}
+
+			@media screen and (min-width: 480px) {
+				.swiper-image {
+					height: 200px;
+				}
+
+			}
+
+			@media screen and (min-width: 760px) {
+				.swiper-image {
+					height: 300px;
+				}
+
+			}
+		</style>
+	</head>
+
+	<body style="padding-top:0px;">
+	<div class="super_container">
+		{% include 'navbar.html' %}
+		{% block content %}
+		replace me
+		{% endblock %}
+		{% include 'footer.html' %}
+	</div>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+			integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+		<script src="{%static 'js/jquery-3.2.1.min.js' %}"></script>
+		<script src="{%static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+		<script src="{%static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+		<script src="{%static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+		<script src="{%static 'plugins/easing/easing.js' %}"></script>
+		<script src="{%static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+		<script src="{%static 'js/custom.js' %}"></script>
+		<script>
+
+			$(document).mousemove(function (m) {
+				var X = m.pageX;
+				var Y = m.pageY;
+				$('.focus').css('background', 'radial-gradient(circle at ' + X + 'px ' + Y + 'px,transparent, rgba(0,0,1,1) 70%)')
 			})
 
 
-			$('.vision').waypoint(function (direction) {
-				$('.vision').addClass('animated animate__animated animate__fadeInRight animate__slow')
-			}, {
-				offset: '600px'
-			})
-		});
-	</script>
+			$(document).ready(function () {
+				$('.motto').waypoint(function (direction) {
+					$('.motto').addClass('animated animate__animated animate__fadeInLeft animate__slow')
+				}, {
+					offset: '600px'
+				})
 
-	<div id="fb-root"></div>
-	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"
-		nonce="EbZoo8P1"></script>
-</body>
+
+				$('.vision').waypoint(function (direction) {
+					$('.vision').addClass('animated animate__animated animate__fadeInRight animate__slow')
+				}, {
+					offset: '600px'
+				})
+			});
+		</script>
+
+		<div id="fb-root"></div>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"
+			nonce="EbZoo8P1"></script>
+	</body>
 
 </html>
