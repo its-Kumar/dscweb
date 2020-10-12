@@ -2,6 +2,54 @@
 {% load static %}
 {% block doc_title %} - Home {% endblock %}
 {% block content %}
+<style>
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    border: 2px solid black;
+    background-color: red;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-image {
+    height: 100px;
+  }
+
+  @media screen and (min-width: 480px) {
+    .swiper-image {
+      height: 200px;
+    }
+
+  }
+
+  @media screen and (min-width: 760px) {
+    .swiper-image {
+      height: 300px;
+    }
+
+  }
+</style>
+
+<!-- Home -->
 <div class="home">
 
   <div class="home_slider_container">
@@ -24,85 +72,86 @@
                   <div class="home_title">
                   </div>
                 </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                
-                <!-- Slide -->
-                <div class="owl-item">
-                  <div class="background_image"
-                    style="background-image:url(https://images.unsplash.com/photo-1484788984921-03950022c9ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=804&q=80)">
-                  </div>
-                  <div class="home_slider_content_container">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col">
-                          <div class="home_slider_content">
-                            <h2 style="font-family: cursive; color: white;">COME TOGETHER...<br>LEARN
-                              TOGETHER...<br>GROW TOGETHER...</h2>
-                            <button type="button" class="btn btn-secondary" style="font-size: 3vw;">Join
-                              Us</button>
-                            <div class="home_title">
-                
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide -->
+      <div class="owl-item">
+        <div class="background_image"
+          style="background-image:url(https://images.unsplash.com/photo-1484788984921-03950022c9ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=804&q=80)">
+        </div>
+        <div class="home_slider_content_container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="home_slider_content">
+                  <h2 style="font-family: cursive; color: white;">COME TOGETHER...<br>LEARN
+                    TOGETHER...<br>GROW TOGETHER...</h2>
+                  <button type="button" class="btn btn-secondary" style="font-size: 3vw;">Join
+                    Us</button>
+                  <div class="home_title">
+
                   </div>
                 </div>
-                
-                <!-- Slide -->
-                <div class="owl-item">
-                  <div class="background_image"
-                    style="background-image:url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80)">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide -->
+      <div class="owl-item">
+        <div class="background_image"
+          style="background-image:url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80)">
+        </div>
+        <div class="home_slider_content_container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="home_slider_content">
+                  <h2 style="font-family: cursive;color: white;">COME TOGETHER...<br>LEARN
+                    TOGETHER...<br>GROW TOGETHER...</h2>
+                  <button type="button" class="btn btn-secondary" style="font-size: 3vw;">Join
+                    Us</button>
+                  <div class="home_title">
+
                   </div>
-                  <div class="home_slider_content_container">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col">
-                          <div class="home_slider_content">
-                            <h2 style="font-family: cursive;color: white;">COME TOGETHER...<br>LEARN
-                              TOGETHER...<br>GROW TOGETHER...</h2>
-                            <button type="button" class="btn btn-secondary" style="font-size: 3vw;">Join
-                              Us</button>
-                            <div class="home_title">
-                
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                
-                </div>
-                </div>
-                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!--About-->
 <section>
   <div class="container-fluid py-5">
     <h1 class="text-center">About the club</h1>
     <p class="text-center">Key features of our club</p>
     <div class="row">
-      <div class="col-sm-3 text-center motto">
-        <h1> <i class="fas fa-heart "></i></h1>
-        <h3 style="color: black;">Motto</h3>
+      <div data-aos="fade-right" class="col-sm-3 text-center">
+        <h1> <i class="fas fa-heart"></i></h1>
+        <h3>Motto</h3>
         <p>Come Together.. <br>Learn Together.. <br>Grow Together...</p>
       </div>
-      <div class="col-sm-3 text-center passion">
-        <h1> <i class="fas fa-heart "></i></h1>
+      <div data-aos="zoom-in" class="col-sm-3 text-center">
+        <h1> <i class="fas fa-heart"></i></h1>
         <h3>passion</h3>
         <p>To help others in reching to their dreams. </p>
       </div>
-      <div class="col-sm-3 text-center mission">
+      <div data-aos="zoom-in" class="col-sm-3 text-center">
         <h1> <i class="fa fa-bullseye"></i></h1>
         <h3>Mission</h3>
         <p>To make students technically aware,so that they may work accordingly.</p>
       </div>
-      <div class="col-sm-3 text-center vision">
+      <div data-aos="fade-left" class="col-sm-3 text-center">
         <h1> <i class="fas fa-eye "></i></h1>
         <h3>Future Goals</h3>
         <p>To bring some new technologies like IOT,Android,Artificial Intelligence,Machine Learning etc. in
@@ -113,6 +162,7 @@
     </div>
   </div>
 </section>
+
 <!--Team-->
 <section>
   <div class="container-fluid py-5 " style="background-color: rgb(229, 226, 226);">
@@ -298,8 +348,8 @@
       </div>
     </div>
     <div class="text-center">
-      <button type="button" class="" data-toggle="collapse" data-target="#rem"><i class="dropdown-toggle"
-          style="text-size:45px;"></i>More Members</button>
+      <button type="button" class="" data-toggle="collapse" data-target="#rem"><i class="dropdown-toggle"></i>More
+        Members</button>
     </div>
     <div class="row collapse" id="rem">
 
@@ -707,7 +757,8 @@
 
 <!--Stats-->
 <section>
-  <div class="container-fluid p-5 bgimg-2 text-light">
+    <div class="container-fluid p-5 text-light"
+      style="background-image: url({%static 'images/459024.jpg' %});background-attachment: fixed;background-size: 200vh;">
     <div class="row">
       <div class="col-sm-3 text-center">
         <h1>25 </h1>
@@ -728,17 +779,19 @@
     </div>
   </div>
 </section>
+
 <!--work-->
 <section class="my-3">
   <div>
-    <h1 class="text-center  my-5">Our Work</h1>
+    <h1 class="text-center my-5">Our Work</h1>
   </div>
+
   <!-- Swiper -->
   <div class="swiper-container d-flex">
     <div class="swiper-wrapper">
       <div class="swiper-slide card">
         <div class="w-100 bg-secondary swiper-image">
-          <img src="/static/images/4.jpeg" class="h-100 img-fluid">
+          <img src="{%static 'images/4.jpeg'%}" class="h-100 img-fluid">
         </div>
         <div>
           <h3>DSC Endeavour</h3>
@@ -750,7 +803,7 @@
       </div>
       <div class="swiper-slide card">
         <div class="w-100 bg-secondary swiper-image">
-          <img src="/static/images/5.jpeg" class="h-100 img-fluid">
+          <img src="{%static 'images/5.jpeg'%}" class="h-100 img-fluid">
         </div>
         <div>
           <h3>Code The COVID</h3>
@@ -762,7 +815,7 @@
       </div>
       <div class="swiper-slide card">
         <div class="w-100 bg-secondary swiper-image">
-          <img src="/static/images/6.jpeg" class="h-100 img-fluid">
+          <img src="{%static 'images/6.jpeg'%}" class="h-100 img-fluid">
         </div>
         <div>
           <h3>Head Up Your C</h3>
@@ -774,7 +827,7 @@
       </div>
       <div class="swiper-slide card">
         <div class="w-100 bg-secondary swiper-image">
-          <img src="/static/images/1.jpeg" class="h-100 img-fluid">
+          <img src="{%static 'images/7.jpeg'%}" class="h-100 img-fluid">
         </div>
         <div>
           <h3>DSC Blend Classes</h3>
@@ -783,7 +836,7 @@
       </div>
       <div class="swiper-slide card">
         <div class="w-100 bg-secondary swiper-image">
-          <img src="/static/images/2.jpeg" class="h-100 img-fluid">
+          <img src="{%static 'images/2.jpeg'%}" class="h-100 img-fluid">
         </div>
         <div>
           <h3>Meet Up Progam</h3>
@@ -792,7 +845,7 @@
       </div>
       <div class="swiper-slide card">
         <div class="w-100 bg-secondary swiper-image">
-          <img src="/static/images/3.jpeg" class="h-100 img-fluid">
+          <img src="{%static 'images/3.jpeg'%}" class="h-100 img-fluid">
         </div>
         <div>
           <h3>C programming Classes</h3>
@@ -800,14 +853,18 @@
         </div>
       </div>
     </div>
+
     <!-- Add Arrows -->
     <div class="swiper-button-next" id="btn-next"></div>
     <div class="swiper-button-prev"></div>
+
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
   </div>
+
   <!-- Swiper JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper('.swiper-container', {
