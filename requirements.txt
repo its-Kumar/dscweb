@@ -1,5 +1,5 @@
 # Python
-python>=3.7
+#python>=3.7
 
 # Django
 Django>=3.0.5
