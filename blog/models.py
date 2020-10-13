@@ -5,6 +5,7 @@ from django.conf import settings
 from django.utils import timezone
 from django.db.models import Q
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 User = settings.AUTH_USER_MODEL
@@ -53,7 +54,8 @@ class BlogPost(models.Model):
                             default='',
                             editable=False,
                             blank=False)
-    content = models.TextField(null=True, blank=True)
+    #content = models.TextField(null=True, blank=True)
+    content = RichTextField(blank=True, null=True)
     publish_date = models.DateTimeField(auto_now_add=False,
                                         null=True,
                                         blank=True)
