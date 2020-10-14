@@ -2,7 +2,17 @@
 
   **DSC(Developer Student Club)** is a official Technical club running in [Rajkiya Engineering College, Bijnor](http://recb.ac.in/) since 2019. DSCWEB is a web project to build website for **DSC club.**
 
-  ![dscweb](dscweb_image.png)
+# DESKTOP VIEW
+  ![dscweb](p1.png)    ![dscweb](p2.png)       ![dscweb](p3.png)
+
+
+# MOBILE VIEW
+
+![dscweb](m1.png)    ![dscweb](m2.png)    
+![dscweb](m3.png)    ![dscweb](m4.png)       
+
+
+
 
 ## Links:
 
@@ -14,11 +24,17 @@
 
 ## Project Status
 
-- Under Developement
+- Completed
 
 ## Project Details
 
-This project is built on the *Django Framework(3.0)*. This project is building by [Kumar Shanu](https://github.com/its-Kumar)(at Back-end Developement) and [Rajat Yadav](https://github.com/rajatyadav8540/)(at Front-end Development).
+This project is built on the *Django Framework(3.0)*. This project is build by [Developer Student Club Team](https://www.dscrecbijnor.com) headed by [Kumar Shanu](https://github.com/its-Kumar)(at Back-end Developement) and [Rajat Yadav](https://github.com/rajatyadav8540/)(at Front-end Development).
+
+##Team Member Involved
+1. [Shubham](https://www.facebook.com/shubham.kanaujiya.75641)
+2. [Durgesh Pal](https://www.facebook.com/profile.php?id=100006648767928)
+3. [Vikas Kumar](https://www.facebook.com/feelthecoder)
+
 
 ---
 
