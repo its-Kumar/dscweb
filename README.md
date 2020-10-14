@@ -18,7 +18,6 @@
 
 
 # MOBILE VIEW
-
 - view 1
   ![dscweb](m1.jpeg)
 
@@ -33,7 +32,7 @@
 
 
 
----
+   ---
 
 
 
