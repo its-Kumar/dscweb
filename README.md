@@ -20,16 +20,16 @@
 # MOBILE VIEW
 
 - view 1
-![dscweb](m1.jpeg)
+  ![dscweb](m1.jpeg)
 
 - view 2
-![dscweb](m2.jpeg) 
+  ![dscweb](m2.jpeg) 
 
 - view 3
-![dscweb](m3.jpeg)  
+  ![dscweb](m3.jpeg)  
 
 - view 4
-![dscweb](m4.jpeg)       
+  ![dscweb](m4.jpeg)       
 
 
 
