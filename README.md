@@ -8,8 +8,8 @@
 
 # MOBILE VIEW
 
-![dscweb](m1.png)    ![dscweb](m2.png)    
-![dscweb](m3.png)    ![dscweb](m4.png)       
+![dscweb](m1.jpeg)    ![dscweb](m2.jpeg)    
+![dscweb](m3.jpeg)    ![dscweb](m4.jpeg)       
 
 
 
