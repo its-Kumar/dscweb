@@ -1,23 +1,28 @@
 {% extends 'base.html' %}
 
 {% block doc_title %}
-    - {{ course.title }}
+- {{ course.title }}
 {% endblock %}
 
 {% block content %}
-    <div class="container" style="padding-top: 25px;">
-        <article>
-            <h2> {{ course.title }} </h2>
-            {{ course.description }}
+<div class="home">
+    <div class="background_image"
+        style="background-image:url(https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+    </div>
+</div>
+<div class="container" style="padding-top: 25px;">
+    <article>
+        <h2> {{ course.title }} </h2>
+        {{ course.description }}
 
         <section>
             {% for step in course.step_set.all  %}
-                <h3> 
+            <h3>
                 <a href="{% url 'courses:step' course_pk=step.course.pk step_pk=step.pk %}">{{ step.title }} </a>
-                </h3>
-                {{ step.description }}
+            </h3>
+            {{ step.description }}
             {% endfor %}
         </section>
-        </article>
-    </div>
+    </article>
+</div>
 {% endblock content %}

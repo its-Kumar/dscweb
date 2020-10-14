@@ -1,20 +1,113 @@
 {% extends "base.html" %}
 
-{% block doc_title %} - {{ object.title }} {% endblock %}
+{% block doc_title %} - {{ blog_post.title }} {% endblock %}
 
 {% block content %}
-    <div class="container" style="padding-top: 25px;"> 
-        <div class="row">
-            {% include 'blog/list-inline.html' with blog_post=object detail=True %}
+<style>
+    .profile-pic {
+        max-width: 30px;
+        max-height: 30px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+<div class="home">
+    <div class="background_image"
+        style="background-image:url(https://images.unsplash.com/photo-1519337265831-281ec6cc8514?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
+    </div>
+</div>
+<div class="container mt-5" style="padding-top: 25px;">
 
-            {% if request.user.is_authenticated %}
-                {% if request.user.is_staff %}
-                    <div class="col-12">
-                    <a class ="btn btn-secondary" href="{{ object.get_edit_url }}">Edit</a>
-                    <a class ="btn btn-danger" href="{{ object.get_delete_url }}">Delete</a>
+    <div class="card border ">
+        <div class="card-header py-0 ">
+
+            <small class="text-muted float-left">
+                <img class="profile-pic" src="{{blog_post.user.profile.profile_pic.url }}"> {{ blog_post.user }}
+            </small>
+            <h3 class="card-title text-center mt-2">{{ blog_post.title }}</h3>
+            <small class="text-muted"> {{ blog_post.publish_date }} </small>
+        </div>
+        <div class="card-body bg-dark text-light text-center ">
+            <div class="mx-auto">
+                {% if blog_post.image %}
+                <a href="{{ blog_post.get_absolute_url }}">
+                    <div class="mx-auto text-center" style="height:300px;">
+                        <img src="{{ blog_post.image.url }}" class=' img-fluid h-100 mx-auto' />
                     </div>
+                </a>
                 {% endif %}
+            </div>
+            <div>
+                <p class="card-text " style="height: ">
+
+                    {% if truncate %}
+                    {{ blog_post.content|safe|linebreaks|truncatewords:30 }}
+                    {% else %}
+                    {{ blog_post.content|safe|linebreaks}}
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+
+
+    {% if request.user.is_authenticated %}
+    {% if request.user == blog_post.user %}
+    <div class="col-12">
+        <a class="btn btn-secondary" href="{{ blog_post.get_edit_url }}">Edit</a>
+        <a class="btn btn-danger" href="{{ blog_post.get_delete_url }}">Delete</a>
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="card-body">
+            <!-- comments -->
+            {% with comments.count as total_comments %}
+            <small>{{ total_comments }} comments</small>
+            <br>
+            <img class="profile-pic" src="{{user.profile.profile_pic.url }}"> {{user.username}}
+            <hr>
+            <p>
+                {% endwith %}
+                {% for comment in comments %}
+            </p>
+
+            <div class="comments" style="padding: 10px;">
+                <p class="font-weight-bold">
+                    <img class="profile-pic" src="{{user.profile.profile_pic.url }}">{{ comment.name }}
+                    <span class=" text-muted font-weight-normal">
+                        {{ comment.created_on }}
+                    </span>
+                </p>
+                {{ comment.body | linebreaks }}
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="card-body">
+            {% if new_comment %}
+            <div class="alert alert-success" role="alert">
+                Your comment is awaiting moderation
+            </div>
+            {% else %}
+            {% if request.user.is_authenticated %}
+            <h3>Leave a comment</h3>
+            <form method="POST" action='.' style="margin-top: 1.3em;">
+                {{ comment_form.as_p }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary  btn-lg"> Comment </button>
+            </form>
+            {% endif %}
             {% endif %}
         </div>
     </div>
+</div>
+
+</div>
 {% endblock %}

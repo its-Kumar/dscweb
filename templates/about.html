@@ -1,9 +1,68 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block doc_title %} - About {% endblock %}
 
 {% block content %}
-    <div class="container" style="padding-top: 25px;">
-        <h1>About Us </h1>
+<!-- About -->
+<div class="home">
+    <div class="background_image"
+        style="background-image:url(https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=707&q=80)">
     </div>
+</div>
+
+<center><img src="{%static 'images/dscstory.jpeg' %}" alt="pic" height="15%" width="30%"></center>
+<hr />
+<img src="{%static 'images/startdate.jpeg' %}" alt="pic" height="15%" width="22%" style="float:right">
+<div class="container" style="padding-top: 25px;">
+    <h2 style="font-family:cursive;"><b><u>About Us:</u></b></h2>
+    <br />
+    <hr />
+    Developer Student Club is a technical club which is for the students, by the students and of the students.
+    In today’s fast-growing world, technology is changing every second.DSC aims to bridge the gap between theoretical
+    and practical knowledge for student. It opts to provide students with the resources and opportunities, all while
+    still pursuing their degrees.Developer Students Club focuses on bringing the best out of students who are always
+    eager to learn something new and make them ready for today’s industry.Developer Students Club opts to shape
+    student developers for a better future. It will be open to any
+    student, ranging from novice developers who are just starting, to advanced developers who want to further their
+    skills.They take on the responsibility to help students learn and empower these students to solve real problems
+    around us.
+
+    <p>Growth and enhancement are the vital pillar for a successful club which require togetherness of every individual in a
+        club. This leads to our motto which says:</p>
+    <h3 style="font-family:cursive;">Come Together <br /> Learn Together <br />Grow Together </h3>
+    <br />
+    <hr /> <br />
+    <p>We, as engineers, have a responsibility towards the development of the society. Being a member of DSC,
+    one gets the guidance to fulfill their dreams of a better tomorrow.Developer Students Club opts
+    to shape student
+    developers for a better future.It is intended to be a space for students to learn and collaborate as they solve
+    problems.</p>
+    <p>Lets join us in building a community of active students.</p>
+    <br />
+    <p>for more information ,you can contact us:
+    <h6>mail us on : dscrecbijnor@gmail.com</h6>
+    <h6>call on : 6395977935</h6>
+
+    <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/dscrecbijnor/" target="_blank">
+        <i class="fab fa-facebook-f"> Our Facebook Page </i>
+    </a><br />
+    <a class="btn-floating btn-tw mx-1" href="https://twitter.com/DscRec" target="_blank">
+        <i class="fab fa-twitter"> Our Twitter Page</i><br />
+    </a>
+    <a class="btn-floating btn-li mx-1" href="https://www.instagram.com/dscrecbijnor/?igshid=b8dp92k5qnhu"
+        target="_blank">
+        <i class="fab fa-instagram"> Our Instagram Page</i>
+    </a>
+
+    </p>
+    <hr /><br />
+    <h5><u>
+            <center>"Technology is best when it brings people together."
+        </u></center>
+    </h5>
+    <h6 style="float:right">-Matt Mullenweg</h6><br />
+    <hr />
+</div>
 {% endblock %}

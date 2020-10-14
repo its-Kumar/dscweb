@@ -1,24 +1,48 @@
-<div class="col-12 col-md-10 mb-3 mx-auto">
-<div class="card {% if not blog_post.publish_date %} bg-dark text-light {% endif %}">
-    <div class="card-body">
+<style>
+    .profile-pic {
+        max-width: 30px;
+        max-height: 30px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+<div class="container my-3">
 
-        {% if blog_post.image %}
-            <a href="{{ blog_post.get_absolute_url }}">
-            <img src = "{{ blog_post.image.url }}" class='card-img-top' /></a>
-        {% endif %}
-        <h5 class="card-title">{{ blog_post.title }}</h5>
-        <p class="card-text">
+    <div class="card {% if not blog_post.publish_date %} bg-dark text-light {% endif %} shadow-lg ">
+        <div class="card-header py-0 ">
+            <small class="text-muted float-left">
+                <img class="profile-pic" src="{{blog_post.user.profile.profile_pic.url }}"> {{ blog_post.user }}
+            </small>
+            <h3 class="card-title text-center mt-2">{{ blog_post.title }}</h3>
             <small class="text-muted"> {{ blog_post.publish_date }} </small>
-            {% if truncate %}
-                {{ blog_post.content|linebreaks|truncatewords:30 }}
-            {% else %}
-                {{ blog_post.content|linebreaks}}
+        </div>
+        <div class="card-body overflow-hidden pt-0 " style="height:200px;">
+            <div style="" class="float-right w-25  ">
+                {% if blog_post.image %}
+                <a href="{{ blog_post.get_absolute_url }}">
+                    <div style="height:400px;">
+                        <img src="{{ blog_post.image.url }}" class='card-img-top w-100' />
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+            <div>
+                <p class="card-text " style="height: ">
+
+                    {% if truncate %}
+                    {{ blog_post.content|safe|linebreaks|truncatewords:30 }}
+                    {% else %}
+                    {{ blog_post.content|safe|linebreaks}}
+                    {% endif %}
+                </p>
+            </div>
+
+        </div>
+        <div class="card-footer text-center py-0">
+            {% if not detail %}
+            {% if not blog_post.publish_date %} Draft {% endif %}
+            <a href="{{ blog_post.get_absolute_url }}" class="btn  btn-block"> Read More>> </a>
             {% endif %}
-        </p>
-    </div>
-    {% if not detail %}
-        {% if not blog_post.publish_date %} Draft {% endif %}
-        <a href="{{ blog_post.get_absolute_url }}"> Read More>> </a>
-    {% endif %}
+        </div>
     </div>
 </div>
