@@ -41,7 +41,7 @@
                 <p class="card-text " style="height: ">
 
                     {% if truncate %}
-                    {{ blog_post.content|safe|linebreaks|truncatewords:30 }}
+                    {{ blog_post.content|safe|linebreaks|truncatewords:"30" }}
                     {% else %}
                     {{ blog_post.content|safe|linebreaks}}
                     {% endif %}

@@ -17,96 +17,28 @@
         </div>
     </div>
 </section>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="card shadow" style="width: 20rem;">
-                <div class="inner">
-                    <img src="{% static 'images/competewithcode.jpeg' %}" class="card-img-top" alt="pic"
-                        class="img-fluid">
-                </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Compete with Code</h5>
-                    <p class="card-text">This is our national level program with exiting cash prizes and sponsored by
-                        Ransom
-                        Technoman Pvt. Ltd. On 30th June. </p>
-                    <a href="#" class="btn btn-success">Know more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow" style="width: 20rem;">
-                <div class="inner">
-                    <img src="{% static 'images/headupc.jpeg' %}" class="card-img-top" alt="pic" class="img-fluid">
-                </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">HEAD UP YOUR C </h5>
-                    <p class="card-text">This is our national level competition on 23rd may 2020.</p>
-                    <a href="#" class="btn btn-success">Know more...</a>
+<section>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for competition in competitions %}
+            <div class="col-md-4">
+                <div class="card shadow" style="width: 20rem;">
+                    <div class="inner">
+                        <img src="{{competition.image.url}}" class="card-img-top" alt="pic" class="img-fluid">
+                    </div>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">{{competition.title}}</h4>
+                        <h6>{{competition.date}}</h6>
+                        <p class="card-text">
+                            {{competition.description|safe|truncatewords:"20"}}</p>
+                        <a href="{{competition.get_absolute_url}}" class="btn btn-success">Know more...</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col md-4">
-            <div class="card shadow" style="width: 20rem;">
-                <div class="inner">
-                    <img src="{% static 'images/drawet.jpeg' %}" class="card-img-top" alt="pic" class="img-fluid">
-                </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Draw-e-technica</h5>
-                    <p class="card-text">This is a poster making competition for enjoyment of students in lockdown at
-                        home.</p>
-                    <a href="#" class="btn btn-success">Know more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col md-4">
-            <div class="card shadow" style="width: 20rem;">
-                <div class="inner">
-                    <img src="{% static 'images/codecovid.jpeg' %}" class="card-img-top" alt="pic" class="img-fluid">
-                </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">CODE the 'COVID'</h5>
-                    <p class="card-text">This is an open coding challenge to all engineering students.</p>
-                    <a href="#" class="btn btn-success">Know more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow" style="width: 20rem;">
-                <div class="inner">
-                    <img src="{% static 'images/initcode.jpeg' %}" class="card-img-top" alt="pic" class="img-fluid">
-                </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">INITCODE </h5>
-                    <p class="card-text">This competition is for second year students.</p>
-                    <a href="#" class="btn btn-success">Know more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow" style="width: 20rem;">
-                <div class="inner">
-                    <img src="{% static 'images/endevour.jpeg' %}" class="card-img-top" alt="pic" class="img-fluid">
-                </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">ENDEAVOUR</h5>
-                    <p class="card-text">This is an online test for computer fundamentals on 12 september 2019.</p>
-                    <a href="#" class="btn btn-success">Know more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow" style="width: 20rem;">
-                <div class="inner">
-                    <img src="{% static 'images/dscblend.jpeg' %}" class="card-img-top" alt="pic" class="img-fluid">
-                </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">DSC Blend Classes </h5>
-                    <p class="card-text">This is our first event in college for first year students.</p>
-                    <a href="#" class="btn btn-success">Know more...</a>
-                </div>
-            </div>
+            {%endfor%}
+
         </div>
     </div>
-</div>
+</section>
 {% endblock %}

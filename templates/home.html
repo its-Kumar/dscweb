@@ -789,69 +789,18 @@
   <!-- Swiper -->
   <div class="swiper-container d-flex">
     <div class="swiper-wrapper">
+      {%for competition in competitions %}
       <div class="swiper-slide card">
         <div class="w-100 bg-secondary swiper-image">
-          <img src="{%static 'images/4.jpeg'%}" class="h-100 img-fluid">
+          <img src="{{competition.image.url}}" class="h-100 img-fluid">
         </div>
         <div>
-          <h3>DSC Endeavour</h3>
-          <p>events detail
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
-            tempora, possimus autem repudiandae? Eos nam alias
-          </p>
+            <h3><a href="{{competition.get_absolute_url}}">{{competition.title }}</a></h3>
+            <h6>{{competition.date }}</h6>
+            <p>{{competition.description|safe|linebreaks|truncatewords:"20"}}</p>
         </div>
       </div>
-      <div class="swiper-slide card">
-        <div class="w-100 bg-secondary swiper-image">
-          <img src="{%static 'images/5.jpeg'%}" class="h-100 img-fluid">
-        </div>
-        <div>
-          <h3>Code The COVID</h3>
-          <p>events detail
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
-            tempora, possimus autem repudiandae? Eos nam alias
-          </p>
-        </div>
-      </div>
-      <div class="swiper-slide card">
-        <div class="w-100 bg-secondary swiper-image">
-          <img src="{%static 'images/6.jpeg'%}" class="h-100 img-fluid">
-        </div>
-        <div>
-          <h3>Head Up Your C</h3>
-          <p>events detail
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nihil quisquam
-            tempora, possimus autem repudiandae? Eos nam alias
-          </p>
-        </div>
-      </div>
-      <div class="swiper-slide card">
-        <div class="w-100 bg-secondary swiper-image">
-          <img src="{%static 'images/7.jpeg'%}" class="h-100 img-fluid">
-        </div>
-        <div>
-          <h3>DSC Blend Classes</h3>
-          <p>events detail</p>
-        </div>
-      </div>
-      <div class="swiper-slide card">
-        <div class="w-100 bg-secondary swiper-image">
-          <img src="{%static 'images/2.jpeg'%}" class="h-100 img-fluid">
-        </div>
-        <div>
-          <h3>Meet Up Progam</h3>
-          <p>events detail</p>
-        </div>
-      </div>
-      <div class="swiper-slide card">
-        <div class="w-100 bg-secondary swiper-image">
-          <img src="{%static 'images/3.jpeg'%}" class="h-100 img-fluid">
-        </div>
-        <div>
-          <h3>C programming Classes</h3>
-          <p>events detail</p>
-        </div>
-      </div>
+      {%endfor%}
     </div>
 
     <!-- Add Arrows -->

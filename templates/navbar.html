@@ -114,6 +114,7 @@
       <li><a href="{% url 'training:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
       </li>
       {% if user.is_authenticated %}
+      <p>Hi {{user.username}}!</p>
       <li><a href="{% url 'logout' %}"><i class="fas fa-user"></i>Logout</a>
       </li>
       <li><a href="{% url 'account' %}"><i class="fas fa-cog"></i>Settings</a></li>
