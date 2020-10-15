@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'ckeditor_uploader',
     'dscweb',
     'accounts',
     'blog',
@@ -158,6 +159,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'events.dscrecbijnor@gmail.com'
 EMAIL_HOST_PASSWORD = 'gycitowrmbeqssmc'
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
+# CkEditor
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())

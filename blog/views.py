@@ -29,7 +29,8 @@ def blog_post_create_view(request):
         data = form.cleaned_data
         data['user'] = request.user
         obj = BlogPost.objects.create(**data)
-        form = BlogPostForm()
+        return redirect('/blog')
+
     template_name = "form.html"
     context = {'form': form}
     return render(request, template_name, context)
@@ -81,7 +82,7 @@ def blog_post_update_view(request, slug):
     form = BlogModelForm(request.POST or None, instance=obj)
     if form.is_valid():
         form.save()
-
+        return redirect(f"{obj.get_absolute_url()}")
     template_name = "form.html"
     context = {'form': form, "title": f"Update {obj.title}"}
     return render(request, template_name, context)
