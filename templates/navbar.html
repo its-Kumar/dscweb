@@ -28,22 +28,20 @@
                   <a href="{% url 'competitions:home' %}"><i class="fas fa-puzzle-piece"></i>Competitions</a>
                 </li>
                 <li>
-
-                  <a href="{% url 'workshops:home' %}">
-                    <i class="fas fa-laptop"></i>Workshops
+                  <a href="{% url 'workshops:home' %}"><i class="fas fa-laptop"></i>Workshops
                   </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'training:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
-                  </li>
-                  <div class="menu_phone ml-auto">
-                  </div>
-                  {% if user.is_authenticated %}
-                  <a href="{% url 'account' %}">
-                    <i class="fas fa-user"></i>Hi {{user.username}}!</a>
-                  {% else %}
-                  <a href="{% url 'login' %}"><i class="fas fa-user "></i>Login</a>
-                  {% endif %}
+                </li>
+                <li>
+                  <a href="{% url 'training:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
+                </li>
+                <div class="menu_phone ml-auto">
+                </div>
+                {% if user.is_authenticated %}
+                <a href="{% url 'account' %}">
+                  <i class="fas fa-user"></i>Hi {{user.username}}!</a>
+                {% else %}
+                <a href="{% url 'login' %}"><i class="fas fa-user "></i>Login</a>
+                {% endif %}
               </ul>
             </nav>
 
@@ -54,16 +52,16 @@
             </div>
 
           </div>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="header_social d-flex flex-row align-items-center justify-content-start">
-            <ul class="d-flex flex-row align-items-start justify-content-start">
-              <li>
-                <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/dscrecbijnor/" target="_blank">
-                  <i class="fab fa-facebook-f"> </i>
-                </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header_social d-flex flex-row align-items-center justify-content-start">
+    <ul class="d-flex flex-row align-items-start justify-content-start">
+      <li>
+        <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/dscrecbijnor/" target="_blank">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
       </li>
       <li>
         <a class="btn-floating btn-tw mx-1" href="https://twitter.com/DscRec" target="_blank">
@@ -84,9 +82,9 @@
         <a class="btn-floating btn-dribbble mx-1" href="https://dscrecbijnor.blogspot.com/" target="_blank">
           <i class="fas fa-blog"> </i></a>
       </li>
-      </ul>
-      </div>
-      </header>
+    </ul>
+  </div>
+</header>
 
 <!-- Menu -->
 
@@ -123,19 +121,19 @@
       </li>
       {% endif %}
     </ul>
-    </div>
-    <div class="menu_social">
-      <div class="menu_phone ml-auto">Contact Us:</div>
-      <ul class="d-flex flex-row align-items-start justify-content-start">
-        <li>
-          <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/dscrecbijnor/" target="_blank">
-            <i class="fab fa-facebook-f"> </i>
-          </a>
-        </li>
-        <li>
-          <a class="btn-floating btn-tw mx-1" href="https://twitter.com/DscRec" target="_blank">
-            <i class="fab fa-twitter"> </i>
-          </a>
+  </div>
+  <div class="menu_social">
+    <div class="menu_phone ml-auto">Contact Us:</div>
+    <ul class="d-flex flex-row align-items-start justify-content-start">
+      <li>
+        <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/dscrecbijnor/" target="_blank">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li>
+        <a class="btn-floating btn-tw mx-1" href="https://twitter.com/DscRec" target="_blank">
+          <i class="fab fa-twitter"> </i>
+        </a>
       </li>
       <li>
         <a class="btn-floating btn-gmail mx-1" href="mailto:dscrecbijnor@gmail.com">
@@ -154,9 +152,3 @@
     </ul>
   </div>
 </div>
-
-<script>
-  jQuery('li').click(function () {
-    jQuery(this).addClass('active');
-  })
-</script>

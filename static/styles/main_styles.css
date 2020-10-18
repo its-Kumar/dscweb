@@ -34,8 +34,8 @@
 {
 	margin: 0;
 	padding: 0;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	--webkit-font-smoothing: antialiased;
+	--webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 body
@@ -50,8 +50,8 @@ div
 {
 	display: block;
 	position: relative;
-	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+	--webkit-box-sizing: border-box;
+    --moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 ul
@@ -66,8 +66,8 @@ p
 	line-height: 1.9285;
 	font-weight: 400;
 	color: #72728c;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	--webkit-font-smoothing: antialiased;
+	--webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 p a
@@ -76,10 +76,10 @@ p a
 	position: relative;
 	color: inherit;
 	border-bottom: solid 1px #ffa07f;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 p:last-of-type
@@ -89,8 +89,8 @@ p:last-of-type
 a, a:hover, a:visited, a:active, a:link
 {
 	text-decoration: none;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	--webkit-font-smoothing: antialiased;
+	--webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 p a:active
@@ -124,8 +124,8 @@ h1, h2, h3, h4, h5, h6
 {
 	font-family: 'Oswald', sans-serif;
 	font-weight: 400;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	--webkit-font-smoothing: antialiased;
+	--webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 h1::selection,
@@ -174,34 +174,34 @@ section
 }
 .trans_200
 {
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .trans_300
 {
-	-webkit-transition: all 300ms ease;
-	-moz-transition: all 300ms ease;
-	-ms-transition: all 300ms ease;
-	-o-transition: all 300ms ease;
+	--webkit-transition: all 300ms ease;
+	--moz-transition: all 300ms ease;
+	--ms-transition: all 300ms ease;
+	--o-transition: all 300ms ease;
 	transition: all 300ms ease;
 }
 .trans_400
 {
-	-webkit-transition: all 400ms ease;
-	-moz-transition: all 400ms ease;
-	-ms-transition: all 400ms ease;
-	-o-transition: all 400ms ease;
+	--webkit-transition: all 400ms ease;
+	--moz-transition: all 400ms ease;
+	--ms-transition: all 400ms ease;
+	--o-transition: all 400ms ease;
 	transition: all 400ms ease;
 }
 .trans_500
 {
-	-webkit-transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	-ms-transition: all 500ms ease;
-	-o-transition: all 500ms ease;
+	--webkit-transition: all 500ms ease;
+	--moz-transition: all 500ms ease;
+	--ms-transition: all 500ms ease;
+	--o-transition: all 500ms ease;
 	transition: all 500ms ease;
 }
 .fill_height
@@ -261,20 +261,20 @@ section
 	left: 0;
 	width: 100%;
 	z-index: 100;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .header_content
 {
 	width: 100%;
 	height: 148px;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .header.scrolled
@@ -291,30 +291,41 @@ section
 }
 .logo a
 {
+	display: inline-block;
 	font-family: 'Bangers', cursive;
 	font-size: 20px;
 	font-weight: 500;
 	color: #FFFFFF;
 	line-height: 0.75;
+	padding-left: 5px;
 }
+
 .main_nav
 {
-	margin-left: 150px;
+	margin-left: 100px;
 }
 .main_nav ul li
 {
 	position: relative;
 }
+
+.main_nav ul li i{
+	padding-right: 5px;
+}
+
+
 .main_nav ul li::after
 {
 	display: block;
 	position: absolute;
 	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
+
+	--webkit-transform: translateX(-50%);
+	--moz-transform: translateX(-50%);
+	--ms-transform: translateX(-50%);
+	--o-transform: translateX(-50%);
 	transform: translateX(-50%);
+
 	top: -104px;
 	width: 2px;
 	height: 0px;
@@ -322,10 +333,11 @@ section
 	content: '';
 	visibility: hidden;
 	opacity: 0;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .main_nav ul li.active::after,
@@ -361,10 +373,10 @@ section
 	top: 0;
 	right: 119px;
 	height: 148px;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .header_social.scrolled
@@ -383,10 +395,10 @@ section
 {
 	font-size: 14px;
 	color: rgba(255,255,255,1);
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .header_social ul li a i:hover
@@ -402,10 +414,10 @@ section
 	font-size: 20px;
 	color: rgba(255,255,255,0.5);
 	cursor: pointer;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .hamburger:hover i
@@ -425,10 +437,10 @@ section
 	width: 100vw;
 	height: 100vh;
 	background: rgba(242,245,246,0.95);
-	-webkit-transition: all 1000ms cubic-bezier(.18,.43,.59,.92);
-	-moz-transition: all 1000ms cubic-bezier(.18,.43,.59,.92);
-	-ms-transition: all 1000ms cubic-bezier(.18,.43,.59,.92);
-	-o-transition: all 1000ms cubic-bezier(.18,.43,.59,.92);
+	--webkit-transition: all 1000ms cubic-bezier(.18,.43,.59,.92);
+	--moz-transition: all 1000ms cubic-bezier(.18,.43,.59,.92);
+	--ms-transition: all 1000ms cubic-bezier(.18,.43,.59,.92);
+	--o-transition: all 1000ms cubic-bezier(.18,.43,.59,.92);
 	transition: all 500ms cubic-bezier(.84,.38,.6,.85);
 	z-index: 1000;
 }
@@ -456,10 +468,10 @@ section
 	width: 18px;
 	height: 18px;
 	transform-origin: center center;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
+	--webkit-transform: rotate(45deg);
+	--moz-transform: rotate(45deg);
+	--ms-transform: rotate(45deg);
+	--o-transform: rotate(45deg);
 	transform: rotate(45deg);
 	cursor: pointer;
 }
@@ -475,18 +487,18 @@ section
 	height: 2px;
 	background: #232323;
 	top: 8px;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .menu_close div:last-of-type
 {
-	-webkit-transform: rotate(90deg) translateX(-2px);
-	-moz-transform: rotate(90deg) translateX(-2px);
-	-ms-transform: rotate(90deg) translateX(-2px);
-	-o-transform: rotate(90deg) translateX(-2px);
+	--webkit-transform: rotate(90deg) translateX(-2px);
+	--moz-transform: rotate(90deg) translateX(-2px);
+	--ms-transform: rotate(90deg) translateX(-2px);
+	--o-transform: rotate(90deg) translateX(-2px);
 	transform: rotate(90deg) translateX(-2px);
 	transform-origin: center;
 }
@@ -499,25 +511,39 @@ section
 	position: absolute;
 	left: 60px;
 	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
+	--webkit-transform: translateY(-50%);
+	--moz-transform: translateY(-50%);
+	--ms-transform: translateY(-50%);
+	--o-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 .menu_content ul li a
 {
+	font-size: large;
+	font-weight: 500;
 	color: #181818;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .menu_content ul li a:hover
 {
 	color: rgba(0,0,0,0.5);
 }
+
+.menu_content ul i{
+	padding-right: 5px;
+}
+.menu_content ul p{
+	font-size: large;
+	font-weight: 400;
+	font-style: italic;
+
+}
+
+
 .menu_social
 {
 	position: absolute;
@@ -540,10 +566,10 @@ section
 {
 	font-size: 14px;
 	color: rgba(0,0,0,0.5);
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .menu_social ul li a i:hover
@@ -598,10 +624,10 @@ section
 	font-family: 'Oswald', sans-serif;
 	font-size: 16px;
 	color: rgba(255,255,255,0.63);
-	-webkit-transition: all 400ms ease;
-	-moz-transition: all 400ms ease;
-	-ms-transition: all 400ms ease;
-	-o-transition: all 400ms ease;
+	--webkit-transition: all 400ms ease;
+	--moz-transition: all 400ms ease;
+	--ms-transition: all 400ms ease;
+	--o-transition: all 400ms ease;
 	transition: all 400ms ease;
 }
 .home_page_nav ul li:not(:last-child)
@@ -624,10 +650,10 @@ section
 	visibility: hidden;
 	opacity: 0;
 	content: '';
-	-webkit-transition: all 400ms ease;
-	-moz-transition: all 400ms ease;
-	-ms-transition: all 400ms ease;
-	-o-transition: all 400ms ease;
+	--webkit-transition: all 400ms ease;
+	--moz-transition: all 400ms ease;
+	--ms-transition: all 400ms ease;
+	--o-transition: all 400ms ease;
 	transition: all 400ms ease;
 }
 .home_page_nav ul li:hover::after
@@ -719,28 +745,28 @@ section
 {
 	width: 20%;
 }
-.search_input::-webkit-input-placeholder
+.search_input::--webkit-input-placeholder
 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #72728c !important;
 }
-.search_input:-moz-placeholder
+.search_input:--moz-placeholder
 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #72728c !important;
 }
-.search_input::-moz-placeholder
+.search_input::--moz-placeholder
 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #72728c !important;
 }
-.search_input:-ms-input-placeholder
+.search_input:--ms-input-placeholder
 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 14px !important;
@@ -979,10 +1005,10 @@ section
 	font-family: 'Oswald', sans-serif;
 	font-size: 16px;
 	color: rgba(255,255,255,0.63);
-	-webkit-transition: all 400ms ease;
-	-moz-transition: all 400ms ease;
-	-ms-transition: all 400ms ease;
-	-o-transition: all 400ms ease;
+	--webkit-transition: all 400ms ease;
+	--moz-transition: all 400ms ease;
+	--ms-transition: all 400ms ease;
+	--o-transition: all 400ms ease;
 	transition: all 400ms ease;
 }
 .test_nav ul li:not(:last-child)
@@ -1005,10 +1031,10 @@ section
 	visibility: hidden;
 	opacity: 0;
 	content: '';
-	-webkit-transition: all 400ms ease;
-	-moz-transition: all 400ms ease;
-	-ms-transition: all 400ms ease;
-	-o-transition: all 400ms ease;
+	--webkit-transition: all 400ms ease;
+	--moz-transition: all 400ms ease;
+	--ms-transition: all 400ms ease;
+	--o-transition: all 400ms ease;
 	transition: all 400ms ease;
 }
 .test_nav ul li:hover::after
@@ -1069,10 +1095,10 @@ section
 	line-height: 0.75;
 	letter-spacing: 0.2em;
 	margin-left: 4px;
-	-webkit-transform: translateY(2px);
-	-moz-transform: translateY(2px);
-	-ms-transform: translateY(2px);
-	-o-transform: translateY(2px);
+	--webkit-transform: translateY(2px);
+	--moz-transform: translateY(2px);
+	--ms-transform: translateY(2px);
+	--o-transform: translateY(2px);
 	transform: translateY(2px);
 }
 .news_post_title
@@ -1226,28 +1252,28 @@ section
 	padding-left: 22px;
 	color: #FFFFFF;
 }
-.newsletter_input::-webkit-input-placeholder
+.newsletter_input::--webkit-input-placeholder
 {
 	font-size: 12px !important;
 	font-weight: 400 !important;
 	font-style: italic;
 	color: #FFFFFF !important;
 }
-.newsletter_input:-moz-placeholder
+.newsletter_input:--moz-placeholder
 {
 	font-size: 12px !important;
 	font-weight: 400 !important;
 	font-style: italic;
 	color: #FFFFFF !important;
 }
-.newsletter_input::-moz-placeholder
+.newsletter_input::--moz-placeholder
 {
 	font-size: 12px !important;
 	font-weight: 400 !important;
 	font-style: italic;
 	color: #FFFFFF !important;
 }
-.newsletter_input:-ms-input-placeholder
+.newsletter_input:--ms-input-placeholder
 {
 	font-size: 12px !important;
 	font-weight: 400 !important;
@@ -1287,10 +1313,10 @@ section
 	background: #FFFFFF;
 	visibility: hidden;
 	opacity: 0;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
+	--webkit-transition: all 200ms ease;
+	--moz-transition: all 200ms ease;
+	--ms-transition: all 200ms ease;
+	--o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
 .newsletter_button
