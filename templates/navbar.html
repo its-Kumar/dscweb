@@ -32,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="{% url 'training:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
+                  <a href="{% url 'trainings:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
                 </li>
                 <div class="menu_phone ml-auto">
                 </div>
@@ -109,7 +109,7 @@
       </li>
       <li><a href="{% url 'workshops:home' %}"><i class="fas fa-laptop"></i>Workshops</a>
       </li>
-      <li><a href="{% url 'training:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
+      <li><a href="{% url 'trainings:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
       </li>
       {% if user.is_authenticated %}
       <p>Hi {{user.username}}!</p>

@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 
-class Workshop(models.Model):
+class Training(models.Model):
     title = models.CharField(max_length=255,
                              unique=True,
                              blank=False,

@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'blog',
     'courses',
     'competitions',
-    'training',
+    'trainings',
     'workshops',
 ]
 

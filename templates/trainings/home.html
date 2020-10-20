@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block doc_title %} -Training
+{% endblock doc_title %}
+
+{% block content %}
+<div class="home">
+    <div class="background_image"
+        style="background-image:url(https://images.unsplash.com/photo-1529465230221-a0d10e46fcbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+    </div>
+</div>
+<div style="background-color:grey;">
+    <div class="cards py-5">
+        {% for training in trainings %}
+        <div class="card m-5 py-5">
+            <header> <a href="{% url 'trainings:detail' pk=training.pk %}">
+                    <h3>{{ training.title }}</h3>
+                </a>
+                <h6>{{training.date }}</h6>
+            </header>
+            <div class="card-copy">
+                <img src="{{training.image.url }}" class="card-img-top">
+                <p>{{ training.description|safe|truncatewords:"20" }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

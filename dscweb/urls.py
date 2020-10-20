@@ -32,7 +32,7 @@ urlpatterns = [
     path('courses/', include('courses.urls', namespace='courses')),
     path('competitions/', include('competitions.urls',
                                   namespace='competitions')),
-    path('training/', include('training.urls', namespace='training')),
+    path('trainings/', include('trainings.urls', namespace='trainings')),
     path('workshops/', include('workshops.urls', namespace='workshops')),
 ]
 
