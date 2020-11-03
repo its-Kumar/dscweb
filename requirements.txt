@@ -17,3 +17,7 @@ dj-database-url
 
 # Rich Text Editor
 django-ckeditor
+
+# AWS file storage
+django-storages
+boto3
