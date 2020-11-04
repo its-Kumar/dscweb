@@ -47,17 +47,18 @@ INSTALLED_APPS = [
     'competitions',
     'trainings',
     'workshops',
+    'storages',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'dscweb.urls'
@@ -134,17 +135,18 @@ USE_TZ = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# paths
+# static paths
 STATIC_URL = '/static/'
-LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR),
-                                     'static_cdn_test')
-# STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')  # LIVE CDN AWS S3
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+#LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR),'static_cdn_test')
+#STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')  # LIVE CDN AWS S3
+#STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+# media paths
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'  # django storage
 
@@ -157,12 +159,25 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'events.dscrecbijnor@gmail.com'
-EMAIL_HOST_PASSWORD = 'gycitowrmbeqssmc'
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER'] 
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 # CkEditor
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+# AWS S3 File storage
+
+## Secrets
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = 'dscweb-bucket'
+
+AWS_S3_REGION_NAME = "ap-south-1"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
