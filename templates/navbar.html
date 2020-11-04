@@ -36,12 +36,15 @@
                 </li>
                 <div class="menu_phone ml-auto">
                 </div>
-                {% if user.is_authenticated %}
-                <a href="{% url 'account' %}">
-                  <i class="fas fa-user"></i>Hi {{user.username}}!</a>
-                {% else %}
-                <a href="{% url 'login' %}"><i class="fas fa-user "></i>Login</a>
-                {% endif %}
+                <li>
+
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'account' %}">
+                    <i class="fas fa-user"></i>Hi {{user.username}}!</a>
+                    {% else %}
+                    <a href="{% url 'login' %}"><i class="fas fa-user  "></i>Login</a>
+                    {% endif %}
+                  </li>
               </ul>
             </nav>
 
@@ -56,9 +59,9 @@
       </div>
     </div>
   </div>
-  <div class="header_social d-flex flex-row align-items-center justify-content-start">
-    <ul class="d-flex flex-row align-items-start justify-content-start">
-      <li>
+  <div class="header_social d-flex flex-row align-items-center justify-content-start d-lg-none">
+    <ul class="d-flex flex-row align-items-start justify-content-start ">
+      <li class="">
         <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/dscrecbijnor/" target="_blank">
           <i class="fab fa-facebook-f"> </i>
         </a>

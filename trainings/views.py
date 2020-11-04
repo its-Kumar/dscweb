@@ -16,3 +16,4 @@ def detail_view(request, pk):
     context = {'training': training}
     template = 'trainings/detail.html'
     return render(request, template, context)
+ 

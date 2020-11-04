@@ -10,20 +10,23 @@
     </div>
 </div>
 <div style="background-color:grey;">
-    <div class="cards py-5">
+    <div class="text-center"><h1 class="py-3 text-dark"><u>Trainings</u></h1></div>
+    <div class="mx-lg-5 mx-sm-2">
+    <div class="row py-5">
         {% for workshop in workshops %}
-        <div class="card m-5 py-5">
+        <div class="cards col-lg-3 col-md-4 col-sm-6 m-3 rounded shadow-lg bg-light">
             <header> <a href="{% url 'workshops:detail' pk=workshop.pk %}">
                     <h3>{{ workshop.title }}</h3>
                 </a>
                 <h6>{{workshop.date }}</h6>
             </header>
-            <div class="card-copy">
+            <div class="overflow-hidden" style="height:200px;">
                 <img class="" src="{{workshop.image.url }}" class="card-img-top">
-                <p>{{ workshop.description|safe|truncatewords:"20" }}</p>
             </div>
+            <p>{{ workshop.description|safe|truncatewords:"20" }}</p>
         </div>
         {% endfor %}
+    </div>
     </div>
 </div>
 {% endblock %}
