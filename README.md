@@ -5,19 +5,24 @@
 ---
 
 # DESKTOP VIEW
+
 - view 1
+
   ![dscweb](static/images/p1.png)
 
 - view 2
+
   ![dscweb](static/images/p2.png)
 
 - view 3
+
   ![dscweb](static/images/p3.png)
 
   ---
 
 
 # MOBILE VIEW
+
 - **view 1**
 
   ![dscweb](static/images/m1.jpeg)
@@ -59,16 +64,32 @@ This project is built on the *Django Framework(3.0)*. This project is build by [
 
 ### Running the Server
 
-Make sure you have installed **python (3.7)** and **django**. If don't have download python from [here](https://python.org/) and run the command **` pip install django `** to install django.\
-If this doesn't work you can install all reuqirements once by using the **` pip install -r requirements.txt `** command. All requirements are mentioned in *`requirements.txt`* file.\
-After that run the server as follow-
+1. Run the following command to activate the environment:
 
-```bash
-cd path/to/dir
-python manage.py runserver 8000
-```
+  ```bash
+  cd path/to/dir
+  pip install pipenv
+  pipenv shell
+  ```
+2. After that install all dependancies specified in Pipfile or Pipfile.lock :
 
-here 8000 is port number. you can use any port number you want.
+  ```
+  pipenv sync
+  ```
+3. Run the server using :
+  ```
+  python manage.py runserver 8000
+  or
+  pipenv run python manage.py runserver
+  ```
+  here 8000 is port number. you can use any port number you want.
+
+4. To install any package :
+  ```
+  pipenv install package_name
+  pipenv update  //run this at last
+  ```
+  It will automaticlly install the package and put it into requirements.
 
 ### Admin
 
