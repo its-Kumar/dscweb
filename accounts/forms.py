@@ -1,5 +1,6 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django import forms
 from .models import Profile
 
@@ -18,3 +19,7 @@ class AccountForm(forms.ModelForm):
         model = Profile
         fields = '__all__'
         exclude = ['user']
+
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(label='Email / Username')
