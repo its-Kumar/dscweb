@@ -4,15 +4,17 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pycodestyle="*"
+autopep8="*"
 
 [packages]
 pytz = "*"
 asgiref = ">=3.2.7"
 sqlparse = ">=0.2.2"
 gunicorn = "*"
-django-heroku = "*"
+
 whitenoise = "*"
-psycopg2-binary = "*"
+
 dj-database-url = "*"
 django-ckeditor = "*"
 django-storages = "*"

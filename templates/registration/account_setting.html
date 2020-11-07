@@ -14,10 +14,10 @@
         style="background-image:url(https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=707&q=80)">
     </div>
 </div>
-
-<div class="row">
-    <div class="col-md-3">
-        <div class="card card-body">
+<div class="container my-5">
+<div class="row d-flex">
+    <div class="col-md-6">
+        <div class="card card-body shadow border ">
             <a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Profile</a>
             <hr>
             <h3 style="text-align: center">Account Settings</h3>
@@ -26,23 +26,24 @@
 
         </div>
     </div>
-    <div class="col-md-9">
-        <div class="card card-body">
-
+    <div class="col-md-6">
+        <div class="card card-body shadow border">
+         <div class="form-group">
             <form method="POST" action="" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{form.as_p}}
 
                 Change Your Password<a href="{% url 'reset_password' %}"> Here </a><br>
-                <input class="btn btn-primary" type="submit" name="Update Information">
+                <input class="btn btn-primary form-control " type="submit" name="Update Information">
             </form>
-        </div>
-        <div class=col-md-12>
-            <a class="btn btn-outline-danger" href={%url 'logout'%}>Logout</a>
+         </div>
         </div>
     </div>
 </div>
+                <div class=my-3>
+                    <a class="btn btn-outline-danger btn-block" href={%url 'logout'%}>Logout</a>
+                </div>
 
-
+</div>
 
 {% endblock %}
