@@ -12,15 +12,14 @@ pytz = "*"
 asgiref = ">=3.2.7"
 sqlparse = ">=0.2.2"
 gunicorn = "*"
-
 whitenoise = "*"
-
 dj-database-url = "*"
 django-ckeditor = "*"
 django-storages = "*"
 boto3 = "*"
 Django = ">=3.0.5"
 Pillow = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.8"
