@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block doc_title %} -Competitions {% endblock doc_title %}
+{% block doc_title %} -Events {% endblock doc_title %}
 {% load static %}
 {% block content %}
 <div class="home">
@@ -12,7 +12,7 @@
     <div class="container-fluid p-4 bgimg-2 text-light">
         <div class="row">
             <div class="col-sm-3 text-center">
-                <h1 style="font-family:cursive;"><u>Competitions: </u></h1>
+                <h1 style="font-family:cursive;"><u>Events: </u></h1>
             </div>
         </div>
     </div>
@@ -21,18 +21,18 @@
 
     <div class="container">
         <div class="row d-flex ">
-            {% for competition in competitions %}
+            {% for event in events %}
             <div class="col-md-4">
                 <div class="card shadow border" style="">
                     <div class="inner">
-                        <img src="{{competition.image.url}}" class="card-img-top" alt="pic" class="img-fluid">
+                        <img src="{{event.image.url}}" class="card-img-top" alt="pic" class="img-fluid">
                     </div>
                     <div class="card-body text-center">
-                        <h4 class="card-title">{{competition.title}}</h4>
-                        <h6>{{competition.date}}</h6>
+                        <h4 class="card-title">{{event.title}}</h4>
+                        <h6>{{event.date}}</h6>
                         <p class="card-text">
-                            {{competition.description|safe|truncatewords:"20"}}</p>
-                        <a href="{{competition.get_absolute_url}}" class="btn btn-success">Know more...</a>
+                            {{event.description|safe|truncatewords:"20"}}</p>
+                        <a href="{{event.get_absolute_url}}" class="btn btn-success">Know more...</a>
                     </div>
                 </div>
             </div>

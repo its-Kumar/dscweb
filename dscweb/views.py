@@ -1,19 +1,27 @@
-from competitions.models import Competition
+from events.models import Event
 from django.shortcuts import render, get_object_or_404
-from .forms import MemberForm
-from .models import Member
-from .models import Head
 
 
 def home_view(request):
-    members = Member.objects.all()
-    heads = Head.objects.all()
-    competitions = Competition.objects.all().filter(is_active=True)
+    members = []
+    faculty = [{
+        "name": "Santosh Kumar",
+        "email": "santosh.recb@gmail.com",
+        "area": "Networking, Algorithms, SDN",
+        "image": "http://recb.ac.in/FacultyPhoto/Faculty21313_20072019012028.jpg",
+    },
+        {
+        "name": "Sudhir Goswami",
+        "email": "sudhirgoswami.recb@gmail.com",
+        "area": "Image Processing and Algorithm Design",
+        "image": "http://recb.ac.in/FacultyPhoto/Faculty04512_20072019012212.JPG",
+    }]
+    events = Event.objects.all().filter(is_active=True)
     context = {
         "title": "DSC",
         "members": members,
-        "heads": heads,
-        "competitions": competitions
+        "events": events,
+        "faculty": faculty,
     }
     return render(request, 'home.html', context)
 
@@ -21,9 +29,3 @@ def home_view(request):
 def about_view(request):
     context = {"title": 'About Us'}
     return render(request, 'about.html', context)
-
-
-def member_detailView(request, first_name):
-    member = get_object_or_404(Member, first_name=first_name)
-    context = {"member": member}
-    return render(request, 'member-view.html', context)

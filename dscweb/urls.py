@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import home_view, about_view, member_detailView
+from .views import home_view, about_view
 from blog.views import blog_post_create_view
 from . import settings
 
@@ -25,15 +25,11 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', home_view, name='home'),
-    path('member/<str:first_name>/', member_detailView),
     path('about/', about_view, name='about'),
     path('blog-new/', blog_post_create_view, name='new_blog'),
     path('blog/', include('blog.urls', namespace='blog')),
     path('courses/', include('courses.urls', namespace='courses')),
-    path('competitions/', include('competitions.urls',
-                                  namespace='competitions')),
-    path('trainings/', include('trainings.urls', namespace='trainings')),
-    path('workshops/', include('workshops.urls', namespace='workshops')),
+    path('events/', include('events.urls')),
 ]
 
 from django.conf.urls.static import static

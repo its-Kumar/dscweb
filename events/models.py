@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 
 
-class Competition(models.Model):
+class Event(models.Model):
 
     title = models.CharField(max_length=255,
                              unique=True,
@@ -19,6 +19,7 @@ class Competition(models.Model):
     image = models.ImageField()
     description = RichTextUploadingField(blank=True, null=True)
     date = models.DateField()
+    apply_link = models.URLField(null=True, blank=True, default='')
     is_active = models.BooleanField(default=True)
 
     class Meta:
@@ -26,7 +27,7 @@ class Competition(models.Model):
 
     def get_absolute_url(self):
         kwargs = {'pk': self.id, 'slug': self.slug}
-        return f"/competitions/{self.id}-{self.slug}/"
+        return f"/events/{self.id}-{self.slug}/"
 
     def save(self, *args, **kwargs):
         value = self.title

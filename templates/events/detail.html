@@ -1,5 +1,5 @@
 {%extends 'base.html' %}
-{% block doc_title%} - {{competition.title}}{%endblock%}
+{% block doc_title%} - {{event.title}}{%endblock%}
 
 {%block content%}
 <div class="home">
@@ -13,26 +13,27 @@
         <div class="card-header py-0 ">
 
 
-            <h3 class="card-title text-center mt-2">{{ competition.title }}</h3>
-            <h6 class="text-center"> {{ competition.date }} </h6>
+            <h3 class="card-title text-center mt-2">{{ event.title }}</h3>
+            <h6 class="text-center"> {{ event.date }} </h6>
         </div>
-        <div class="card-body bg-dark text-light text-center ">
+        <div class="card-body bg-light text-center ">
             <div class="mx-auto">
-                {% if competition.image %}
-                <a href="{{ competition.get_absolute_url }}">
+                {% if event.image %}
+                <a href="{{ event.get_absolute_url }}">
                     <div class="mx-auto text-center" style="height:300px;">
-                        <img src="{{ competition.image.url }}" class=' img-fluid h-100 mx-auto' />
+                        <img src="{{ event.image.url }}" class=' img-fluid h-100 mx-auto' />
                     </div>
                 </a>
                 {% endif %}
             </div>
             <div>
                 <p class="card-text " style="height: ">
-                    {{ competition.description|safe|linebreaks}}
+                    {{ event.description|safe|linebreaks}}
                 </p>
             </div>
         </div>
         <div class="card-footer">
+            <a class="btn btn-primary btn-block" href="{{event.apply_link}}">Apply</a>
         </div>
     </div>
 </div>

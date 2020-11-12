@@ -172,6 +172,48 @@
   </div>
 </section>
 
+<!-- Faculty -->
+<section>
+  <div class="container-fluid py-5" style="background-color: rgb(229, 226, 226);">
+    <h1 class="text-center">Faculty Co-ordinators</h1>
+    <p class="text-center">The ones who made this possible</p>
+    <div class="row d-flex justify-content-center">
+      {% for fac in faculty%}
+      <div class="col-lg-3 col-md-4 col-sm-6 p-4">
+
+        <div class="team-single">
+          <div class="content-area">
+            <div class="side1">
+              <div class="card shadow ">
+                <div class="card-body text-center">
+                  <div class="img-area">
+                    <img src="{{fac.image}}" alt="Pic" class="img-fluid">
+                  </div>
+                  <h2 class="membername">{{fac.name}}</h2>
+                  <p class="text-secondary h5">Assistant Professor</p>
+                </div>
+              </div>
+            </div>
+            <div class="side2">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h2 class="membername text-decoration-none">{{fac.name}}</h2>
+                  <p>Email: {{fac.email}}</p>
+                  <p>Area of intrest: {{fac.area}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Faculty -->
 <!--Team-->
 <section id="team">
   <div class="container-fluid py-5 " style="background-color: rgb(229, 226, 226);">
@@ -798,15 +840,15 @@
   <!-- Swiper -->
   <div class="swiper-container d-flex">
     <div class="swiper-wrapper">
-      {%for competition in competitions %}
+      {%for event in events %}
       <div class="swiper-slide card">
         <div class="w-100 bg-secondary swiper-image">
-          <img src="{{competition.image.url}}" class="h-100 img-fluid">
+          <img src="{{event.image.url}}" class="h-100 img-fluid">
         </div>
         <div>
-            <h3><a href="{{competition.get_absolute_url}}">{{competition.title }}</a></h3>
-            <h6>{{competition.date }}</h6>
-            <p>{{competition.description|safe|linebreaks|truncatewords:"20"}}</p>
+            <h3><a href="{{event.get_absolute_url}}">{{event.title }}</a></h3>
+            <h6>{{event.date }}</h6>
+            <p>{{event.description|safe|linebreaks|truncatewords:"20"}}</p>
         </div>
       </div>
       {%endfor%}

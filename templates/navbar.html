@@ -25,15 +25,9 @@
                   <a href="{% url 'courses:list' %}"><i class="fas fa-book-open"></i>Courses</a>
                 </li>
                 <li>
-                  <a href="{% url 'competitions:home' %}"><i class="fas fa-puzzle-piece"></i>Competitions</a>
+                  <a href="{% url 'events:home' %}"><i class="fas fa-puzzle-piece"></i>Events</a>
                 </li>
                 <li>
-                  <a href="{% url 'workshops:home' %}"><i class="fas fa-laptop"></i>Workshops
-                  </a>
-                </li>
-                <li>
-                  <a href="{% url 'trainings:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
-                </li>
                 <div class="menu_phone ml-auto">
                 </div>
                 <li>
@@ -108,11 +102,7 @@
       <li><a href="{% url 'blog:blogs' %}"><i class="fas fa-blog"></i>Blog</a></li>
       <li><a href="{% url 'courses:list' %}"><i class="fas fa-book-open"></i>Courses</a>
       </li>
-      <li><a href="{% url 'competitions:home' %}"><i class="fas fa-puzzle-piece"></i>Competitions</a>
-      </li>
-      <li><a href="{% url 'workshops:home' %}"><i class="fas fa-laptop"></i>Workshops</a>
-      </li>
-      <li><a href="{% url 'trainings:home' %}"><i class="fas fa-wrench"></i>Trainings</a>
+      <li><a href="{% url 'events:home' %}"><i class="fas fa-puzzle-piece"></i>Events</a>
       </li>
       {% if user.is_authenticated %}
       <p>Hi {{user.username}}!</p>
