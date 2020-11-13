@@ -1,9 +1,15 @@
 from events.models import Event
 from django.shortcuts import render, get_object_or_404
+import csv
 
 
 def home_view(request):
     members = []
+    with open('members.csv') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for i in reader:
+            members.append(i)
+
     faculty = [{
         "name": "Santosh Kumar",
         "email": "santosh.recb@gmail.com",

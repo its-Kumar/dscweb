@@ -302,7 +302,7 @@ section
 
 .main_nav
 {
-	margin-left: 150px;
+	margin-left: 200px;
 }
 .main_nav ul li
 {
@@ -349,7 +349,7 @@ section
 }
 .main_nav ul li:not(:last-child)
 {
-	margin-right: 44px;
+	margin-right: 60px;
 }
 .main_nav ul li a
 {
