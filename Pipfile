@@ -20,6 +20,8 @@ boto3 = "*"
 Django = ">=3.0.5"
 Pillow = "*"
 psycopg2-binary = "*"
+django-allauth = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"
