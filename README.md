@@ -62,6 +62,17 @@ This project is built on the *Django Framework(3.0)*. This project is build by [
 
 ## Developement
 
+If you want to run the server in local make sure to turn on debug mode by modifying the line `DEBUG=False` to `DEBUG=True`.
+
+```python
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ["*"]
+
+# Application definition
+```
+
 ### Running the Server
 
 1. Run the following command to activate the environment:
@@ -71,11 +82,9 @@ This project is built on the *Django Framework(3.0)*. This project is build by [
   pip install pipenv
   pipenv shell
   ```
-2. After that install all dependancies specified in Pipfile or Pipfile.lock :
+2. After that install all dependancies specified in Pipfile or Pipfile.lock :\
+`$ pipenv sync`
 
-  ```
-  pipenv sync
-  ```
 3. Run the server using :
   ```
   python manage.py runserver 8000
