@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qb^uw=)al7t@$0(6$=v%-1yd=484)abu09rk&n6y31_#mvhu6a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -103,12 +103,8 @@ if DEBUG is True:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'dscweb',
-            'USER': 'dscwebuser',
-            'PASSWORD': os.environ['PASSWORD'],
-            'HOST': 'localhost',
-            'PORT': '',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
