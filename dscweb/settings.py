@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+
 from django.conf.global_settings import (EMAIL_HOST, EMAIL_HOST_PASSWORD,
                                          EMAIL_HOST_USER, EMAIL_USE_TLS)
 
