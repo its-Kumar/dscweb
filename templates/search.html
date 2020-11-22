@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="home">
+    <div class="background_image"
+        style="background-image:url(https://images.unsplash.com/photo-1529465230221-a0d10e46fcbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+    </div>
+</div>
+<div class='row d-flex justify-content-center'>
+    <div class='col-12 col-8 mx-auto ml-5'>
+        {% if query %}
+        <h3 class="text-center"> You searched for "{{ query }}" </h3>
+
+        {% else %}
+        <br>
+        <form class="form-inline my-2 my-lg-0 justify-content-center" action="/search/">
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        {% endif %}
+
+        <h3 class="ml-5">BlogPosts:</h3>
+        {% for blog_item in blog_list %}
+        {% include 'blog/list-inline.html' with blog_post=blog_item truncate=True detail=False %}
+        {% endfor %}
+
+        <h3 class="ml-5">Events:</h3>
+        {%for event in event_list%}
+        <div class="col-md-4 ml-2">
+            <div class="card shadow border" style="">
+                <div class="inner">
+                    <img src="{{event.image.url}}" class="card-img-top" alt="pic" class="img-fluid">
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="card-title">{{event.title}}</h4>
+                    <h6>{{event.date}}</h6>
+                    <p class="card-text">
+                        {{event.description|safe|truncatewords:"20"}}</p>
+                    <a href="{{event.get_absolute_url}}" class="btn btn-success">Know more...</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+{%endblock%}

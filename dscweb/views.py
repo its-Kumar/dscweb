@@ -1,6 +1,8 @@
-from events.models import Event
-from django.shortcuts import render, get_object_or_404
 import csv
+
+from blog.models import BlogPost
+from django.shortcuts import get_object_or_404, render
+from events.models import Event
 
 
 def home_view(request):
@@ -35,3 +37,14 @@ def home_view(request):
 def about_view(request):
     context = {"title": 'About Us'}
     return render(request, 'about.html', context)
+
+
+def search_view(request):
+    query = request.GET.get('q', None)
+    context = {"query": query}
+    if query is not None:
+        blog_list = BlogPost.objects.search(query=query)
+        event_list = Event.objects.search(query=query)
+        context['blog_list'] = blog_list
+        context['event_list'] = event_list
+    return render(request, 'search.html', context)

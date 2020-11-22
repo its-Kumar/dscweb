@@ -1,11 +1,12 @@
-import os
 import itertools
-from django.db import models
-from django.conf import settings
-from django.utils import timezone
-from django.db.models import Q
-from django.utils.text import slugify
+import os
+
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.conf import settings
+from django.db import models
+from django.db.models import Q
+from django.utils import timezone
+from django.utils.text import slugify
 
 # Create your models here.
 User = settings.AUTH_USER_MODEL
@@ -21,6 +22,7 @@ class BlogPostManager(models.Manager):
         now = timezone.now()
         return self.get_queryset().filter(publish_date__lte=now)
     '''
+
     def get_queryset(self):
         return BlogPostQuerySet(self.model, using=self._db)
 

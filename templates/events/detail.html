@@ -16,7 +16,7 @@
             <h3 class="card-title text-center mt-2">{{ event.title }}</h3>
             <h6 class="text-center"> {{ event.date }} </h6>
         </div>
-        <div class="card-body bg-light text-center ">
+        <div class="card-body bg-light text-justify ">
             <div class="mx-auto">
                 {% if event.image %}
                 <a href="{{ event.get_absolute_url }}">

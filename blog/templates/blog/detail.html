@@ -27,7 +27,7 @@
             <h3 class="card-title text-center mt-2">{{ blog_post.title }}</h3>
             <small class="text-muted"> {{ blog_post.publish_date }} </small>
         </div>
-        <div class="card-body bg-dark text-light text-center ">
+        <div class="card-body bg-dark text-light text-justify ">
             <div class="mx-auto">
                 {% if blog_post.image %}
                 <a href="{{ blog_post.get_absolute_url }}">
