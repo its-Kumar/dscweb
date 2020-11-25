@@ -7,7 +7,6 @@ from django.utils.text import slugify
 
 
 class EventManager(models.Manager):
-
     def get_queryset(self):
         return EventQuerySet(self.model, using=self._db)
 
@@ -19,36 +18,33 @@ class EventManager(models.Manager):
 
 class EventQuerySet(models.QuerySet):
     def search(self, query):
-        lookup = (Q(title__icontains=query) |
-                  Q(description__contains=query) |
-                  Q(slug__icontains=query)
-                  )
+        lookup = (
+            Q(title__icontains=query)
+            | Q(description__contains=query)
+            | Q(slug__icontains=query)
+        )
         return self.filter(lookup)
 
 
 class Event(models.Model):
 
-    title = models.CharField(max_length=255,
-                             unique=True,
-                             blank=False,
-                             null=False)
-    slug = models.SlugField(default='',
-                            editable=False,
-                            blank=False,
-                            max_length=255)
+    title = models.CharField(
+        max_length=255, unique=True, blank=False, null=False)
+    slug = models.SlugField(default="", editable=False,
+                            blank=False, max_length=255)
 
     image = models.ImageField()
     description = RichTextUploadingField(blank=True, null=True)
     date = models.DateField()
-    apply_link = models.URLField(null=True, blank=True, default='')
+    apply_link = models.URLField(null=True, blank=True, default="")
     is_active = models.BooleanField(default=True)
     objects = EventManager()
 
     class Meta:
-        ordering = ['-date']
+        ordering = ["-date"]
 
     def get_absolute_url(self, *args, **kwargs):
-        kwargs = {'pk': self.id, 'slug': self.slug}
+        kwargs = {"pk": self.id, "slug": self.slug}
         return f"/events/{self.id}-{self.slug}/"
 
     def save(self, *args, **kwargs):

@@ -1,9 +1,11 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import BlogPost
+from django.shortcuts import get_object_or_404, redirect, render
+
 from .forms import BlogModelForm, BlogPostForm, CommentForm
+from .models import BlogPost
+
 # from django.utils import timezone
 
 # Create your views here.
@@ -17,7 +19,7 @@ def blog_post_list_view(request):
         my_qs = BlogPost.objects.filter(user=request.user)
         qs = (my_qs | qs).distinct()
     template_name = "blog/list.html"
-    context = {'object_list': qs}
+    context = {"object_list": qs}
     return render(request, template_name, context)
 
 
@@ -27,12 +29,12 @@ def blog_post_create_view(request):
     if form.is_valid():
         print(form.cleaned_data)
         data = form.cleaned_data
-        data['user'] = request.user
+        data["user"] = request.user
         obj = BlogPost.objects.create(**data)
-        return redirect('/blog')
+        return redirect("/blog")
 
     template_name = "form.html"
-    context = {'form': form}
+    context = {"form": form}
     return render(request, template_name, context)
 
 
@@ -71,7 +73,7 @@ def blog_post_detail_view(request, slug):
         "blog_post": post,
         "comments": comments,
         "new_comment": new_comment,
-        "comment_form": comment_form
+        "comment_form": comment_form,
     }
     return render(request, template_name, context)
 
@@ -84,7 +86,7 @@ def blog_post_update_view(request, slug):
         form.save()
         return redirect(f"{obj.get_absolute_url()}")
     template_name = "form.html"
-    context = {'form': form, "title": f"Update {obj.title}"}
+    context = {"form": form, "title": f"Update {obj.title}"}
     return render(request, template_name, context)
 
 
@@ -92,8 +94,8 @@ def blog_post_update_view(request, slug):
 def blog_post_delete_view(request, slug):
     obj = get_object_or_404(BlogPost, slug=slug)
     template_name = "blog/delete.html"
-    if request.method == 'POST':
+    if request.method == "POST":
         obj.delete()
-        return redirect('/blog')
+        return redirect("/blog")
     context = {"object": obj}
     return render(request, template_name, context)

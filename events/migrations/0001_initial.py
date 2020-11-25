@@ -8,23 +8,35 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Event',
+            name="Event",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255, unique=True)),
-                ('slug', models.SlugField(default='', editable=False, max_length=255)),
-                ('image', models.ImageField(upload_to='')),
-                ('description', ckeditor_uploader.fields.RichTextUploadingField(blank=True, null=True)),
-                ('date', models.DateField()),
-                ('is_active', models.BooleanField(default=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255, unique=True)),
+                ("slug", models.SlugField(default="", editable=False, max_length=255)),
+                ("image", models.ImageField(upload_to="")),
+                (
+                    "description",
+                    ckeditor_uploader.fields.RichTextUploadingField(
+                        blank=True, null=True
+                    ),
+                ),
+                ("date", models.DateField()),
+                ("is_active", models.BooleanField(default=True)),
             ],
             options={
-                'ordering': ['-date'],
+                "ordering": ["-date"],
             },
         ),
     ]
