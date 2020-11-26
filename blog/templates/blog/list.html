@@ -8,15 +8,40 @@
         style="background-image:url(https://images.unsplash.com/photo-1519337265831-281ec6cc8514?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
     </div>
 </div>
-<div style="background-color: lightgrey" class="my-5">
+<!-- Search -->
 
-    <div class="text-center p-5">
-        <a class="btn btn-primary" href="{% url 'new_blog' %}">+ New Blog </a>
+<div class="home_search">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="home_search_container">
+                    <div class="home_search_title">Search our site</div>
+                    <div class="home_search_content">
+                        <form action="/search/" class="home_search_form" id="home_search_form">
+                            <div
+                                class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+                                <input class="search_input search_input_1" type="search" name="q"
+                                    placeholder="Enter to Search" required="required">
+                                <button class="home_search_button">search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row" style="box-shadow: darkgray; border-radius:20px;">
+</div>
+
+    <div style="background-color: lightgrey" class="my-5">
+
+        <div class="text-center p-5">
+            <a class="btn btn-primary" href="{% url 'new_blog' %}">+ New Blog </a>
+        </div>
+        <div class="row" style="box-shadow: darkgray; border-radius:20px;">
         {% for object in object_list %}
         {% include 'blog/list-inline.html' with blog_post=object truncate=True detail=False %}
         {% endfor %}
     </div>
 </div>
+
 {% endblock %}
