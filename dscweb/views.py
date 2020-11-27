@@ -1,6 +1,6 @@
 import csv
 
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import render
 
 from blog.models import BlogPost
 from events.models import Event

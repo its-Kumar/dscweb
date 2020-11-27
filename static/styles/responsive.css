@@ -134,6 +134,7 @@
 	.home_slider_content_container
 	{
 		top: 50%;
+		padding-top: 100px;
 		-webkit-transform: translateY(-50%);
 		-moz-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);

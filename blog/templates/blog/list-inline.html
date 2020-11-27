@@ -10,11 +10,11 @@
 
     <div class="card {% if not blog_post.publish_date %} bg-dark text-light {% endif %} shadow-lg ">
         <div class="card-header py-0 ">
-            <small class="text-muted float-left">
-                <img class="profile-pic" src="{{blog_post.user.profile.profile_pic.url }}"> {{ blog_post.user }}
-            </small>
             <h3 class="card-title text-center mt-2">{{ blog_post.title }}</h3>
-            <small class="text-muted"> {{ blog_post.publish_date }} </small>
+            <small class="text-muted float-left">
+                <img class="profile-pic" src="{{blog_post.user.profile.profile_pic.url }}"> {{ blog_post.user }}<br>
+                {{ blog_post.publish_date }}
+            </small>
         </div>
         <div class="card-body overflow-hidden pt-0 " style="height:200px;">
             <div style="" class="float-right w-25  ">
