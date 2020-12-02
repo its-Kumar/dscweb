@@ -10,14 +10,16 @@
 
     <div class="card {% if not blog_post.publish_date %} bg-dark text-light {% endif %} shadow-lg ">
         <div class="card-header py-0 ">
-            <h3 class="card-title text-center mt-2">{{ blog_post.title }}</h3>
+            <h3 class="card-title text-center mt-2"><a href="{{ blog_post.get_absolute_url }}"
+                    style="text-decoration: none !important;">{{ blog_post.title }}</a></h3>
+            {%if blog_post.draft%}<p style="color: red;">Draft</p>{%endif%}
             <small class="text-muted float-left">
                 <img class="profile-pic" src="{{blog_post.user.profile.profile_pic.url }}"> {{ blog_post.user }}<br>
                 {{ blog_post.publish_date }}
             </small>
         </div>
         <div class="card-body overflow-hidden pt-0 " style="height:200px;">
-            <div style="" class="float-right w-25  ">
+            <div class="float-right w-25  ">
                 {% if blog_post.image %}
                 <a href="{{ blog_post.get_absolute_url }}">
                     <div style="height:400px;">

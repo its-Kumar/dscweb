@@ -22,6 +22,7 @@
         <div class="card-header py-0 ">
 
             <h3 class="card-title text-center mt-2">{{ blog_post.title }}</h3>
+            {%if blog_post.draft%}<p style="color: red;">Draft</p>{%endif%}
             <small class="text-muted float-left">
                 <img class="profile-pic" src="{{blog_post.user.profile.profile_pic.url }}"> {{ blog_post.user }}<br>
                 {{ blog_post.publish_date }}

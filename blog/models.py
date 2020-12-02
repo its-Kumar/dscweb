@@ -5,6 +5,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.conf import settings
 from django.db import models
 from django.db.models import Q
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
 
@@ -39,7 +40,7 @@ class BlogPostManager(models.Manager):
 class BlogPostQuerySet(models.QuerySet):
     def published(self):
         now = timezone.now()
-        return self.filter(publish_date__lte=now)
+        return self.filter(draft=False).filter(publish_date__lte=now)
 
     def search(self, query):
         lookup = (
@@ -59,15 +60,14 @@ class BlogPost(models.Model):
                             editable=False, blank=False)
     # content = models.TextField(null=True, blank=True)
     content = RichTextUploadingField(blank=True, null=True)
-    publish_date = models.DateTimeField(
-        auto_now_add=False, null=True, blank=True)
-    timestamp = models.DateTimeField(default=timezone.now)
-    updated = models.DateTimeField(auto_now=True)
+    draft = models.BooleanField(default=False)
+    publish_date = models.DateTimeField(auto_now_add=False, auto_now=False)
+    timestamp = models.DateTimeField(default=timezone.now, auto_now=False)
+    updated = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     objects = BlogPostManager()
 
     def _generate_slug(self):
-        max_length = self._meta.get_field("slug").max_length
         value = self.title
         slug_candidate = slug_original = slugify(value, allow_unicode=True)
         for i in itertools.count(1):
@@ -87,13 +87,13 @@ class BlogPost(models.Model):
         ordering = ["-publish_date", "-updated", "-timestamp"]
 
     def get_absolute_url(self):
-        return f"/blog/{self.slug}"
+        return reverse('blog:view', kwargs={"slug": self.slug})
 
     def get_edit_url(self):
-        return f"/blog/{self.slug}/edit"
+        return reverse('blog:edit', kwargs={"slug": self.slug})
 
     def get_delete_url(self):
-        return f"/blog/{self.slug}/delete"
+        return reverse('blog:del', kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title

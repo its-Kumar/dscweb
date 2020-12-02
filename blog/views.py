@@ -1,9 +1,8 @@
-from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import BlogModelForm, BlogPostForm, CommentForm
+from .forms import BlogModelForm, CommentForm
 from .models import BlogPost
 
 # from django.utils import timezone
@@ -81,7 +80,8 @@ def blog_post_detail_view(request, slug):
 @login_required
 def blog_post_update_view(request, slug):
     obj = get_object_or_404(BlogPost, slug=slug)
-    form = BlogModelForm(request.POST or None, instance=obj)
+    form = BlogModelForm(request.POST or None,
+                         request.FILES or None, instance=obj)
     if form.is_valid():
         form.save()
         return redirect(f"{obj.get_absolute_url()}")
