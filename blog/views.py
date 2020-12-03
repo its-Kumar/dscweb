@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.http import Http404
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import BlogModelForm, CommentForm
@@ -11,14 +11,20 @@ from .models import BlogPost
 
 
 def blog_post_list_view(request):
-    # now = timezone.now()
     qs = BlogPost.objects.all().published()
-    # qs = BlogPost.objects.filter(publish_date__lte=now)
     if request.user.is_authenticated:
         my_qs = BlogPost.objects.filter(user=request.user)
         qs = (my_qs | qs).distinct()
+    paginator = Paginator(qs, 10)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     template_name = "blog/list.html"
-    context = {"object_list": qs}
+    context = {"object_list": posts}
     return render(request, template_name, context)
 
 

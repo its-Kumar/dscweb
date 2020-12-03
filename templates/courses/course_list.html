@@ -48,4 +48,21 @@ Available Courses
         {% endfor %}
     </div>
 </div>
+<div class="pagination justify-content-center">
+    <span class="step-links">
+        {% if courses.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ courses.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ courses.number }} of {{ courses.paginator.num_pages }}.
+        </span>
+
+        {% if courses.has_next %}
+        <a href="?page={{ courses.next_page_number }}">next</a>
+        <a href="?page={{ courses.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
 {% endblock content %}

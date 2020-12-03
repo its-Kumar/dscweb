@@ -1,10 +1,19 @@
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import get_object_or_404, render
 
 from .models import Course, Step
 
 
 def course_list(request):
-    courses = Course.objects.all()
+    queryset = Course.objects.all()
+    paginator = Paginator(queryset, 10)
+    page = request.GET.get('page')
+    try:
+        courses = paginator.page(page)
+    except PageNotAnInteger:
+        courses = paginator.page(1)
+    except EmptyPage:
+        courses = paginator.page(paginator.num_pages)
     context = {"courses": courses}
     return render(request, "courses/course_list.html", context)
 
