@@ -33,7 +33,7 @@
 </div>
 
 <section style="padding-top: 80px">
-    <div class="container-fluid p-4 bgimg-2 text-light">
+    <div class="container-fluid p-4 bgimg-2">
         <div class="row">
             <div class="col-sm-3 text-center">
                 <h1 style="font-family:cursive;"><u>Events: </u></h1>
@@ -47,7 +47,7 @@
         <div class="row d-flex ">
             {% for event in events %}
             <div class="col-md-4">
-                <div class="card shadow border" style="">
+                <div class="card shadow border" style="margin-bottom: 1em;">
                     <div class="inner">
                         <img src="{{event.image.url}}" class="card-img-top" alt="pic" class="img-fluid">
                     </div>
@@ -70,11 +70,11 @@
             <a href="?page=1">&laquo; first</a>
             <a href="?page={{ object_list.previous_page_number }}">previous</a>
             {% endif %}
-    
+
             <span class="current">
                 Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
             </span>
-    
+
             {% if object_list.has_next %}
             <a href="?page={{ object_list.next_page_number }}">next</a>
             <a href="?page={{ object_list.paginator.num_pages }}">last &raquo;</a>

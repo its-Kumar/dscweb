@@ -8,16 +8,19 @@
 
 - view 1
 
-  ![dscweb](static/images/p1.png)
+  ![dscweb](static/images/Screenshot1.png)
 
 - view 2
 
-  ![dscweb](static/images/p2.png)
+  ![dscweb](static/images/Screenshot2.png)
 
 - view 3
 
-  ![dscweb](static/images/p3.png)
+  ![dscweb](static/images/Screenshot3.png)
 
+- view 4
+
+  ![dscblog](static/images/Screenshot4.png)
   ---
 
 
