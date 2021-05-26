@@ -47,6 +47,7 @@
     }
 
   }
+
 </style>
 
 <!-- Home -->
@@ -58,14 +59,14 @@
       <!-- Slide -->
       <div class="owl-item">
         <div class="background_image"
-          style="background-image:url(https://images.unsplash.com/photo-1573495804683-641191e042ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
+          style="background-image:url({% static 'images/c1.png' %});background-position:left;">
         </div>
         <div class="home_slider_content_container">
           <div class="container">
             <div class="row">
               <div class="col">
                 <div class="home_slider_content">
-                  <h3 style="color: white;">COME TOGETHER...<br>LEARN
+                  <h3 style="color: white;" class="">COME TOGETHER...<br>LEARN
                     TOGETHER...<br>GROW TOGETHER...</h3>
                   <a href="static/joinus.html" type="button" class="btn btn-secondary" style="font-size: 3vw;">Join
                     Us</a>
@@ -80,8 +81,7 @@
 
       <!-- Slide -->
       <div class="owl-item">
-        <div class="background_image"
-          style="background-image:url(https://images.unsplash.com/photo-1484788984921-03950022c9ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=804&q=80)">
+        <div class="background_image" style="background-image:url({% static 'images/c2.jpg' %})">
         </div>
         <div class="home_slider_content_container">
           <div class="container">
@@ -104,8 +104,7 @@
 
       <!-- Slide -->
       <div class="owl-item">
-        <div class="background_image"
-          style="background-image:url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80)">
+        <div class="background_image" style="background-image:url({% static 'images/c3.jpg' %})">
         </div>
         <div class="home_slider_content_container">
           <div class="container">
@@ -254,8 +253,8 @@
 
                     <img src="{%static 'images/members/' %}{{member.Name}}.jpg" alt="Pic" class="img-fluid">
                   </div>
-                    <h2 class="membername">{{member.Name}}</h2>
-                    <p class="text-secondary h5">{{member.Position}}</p>
+                  <h2 class="membername">{{member.Name}}</h2>
+                  <p class="text-secondary h5">{{member.Position}}</p>
                 </div>
               </div>
             </div>
@@ -269,18 +268,19 @@
                   <p>{{member.Bio}}</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a href="{{member.Facebook_Profile}}" class="social-link" target="_blank">
+                      <a href="{{member.Facebook_Profile}}" class="social-link" target="_blank"
+                        rel="noopner noreferrer">
                         <i class="fab fa-facebook-square" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{member.LinkedIn_Profile}}"
-                        class="social-link" target="_blank">
+                      <a href="{{member.LinkedIn_Profile}}" class="social-link" target="_blank"
+                        rel="noopner noreferrer">
                         <i class="fab fa-linkedin" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{member.Github_Profile}}" class="social-link" target="_blank">
+                      <a href="{{member.Github_Profile}}" class="social-link" target="_blank" rel="noopner noreferrer">
                         <i class="fab fa-github-square" aria-hidden="true"></i>
                       </a>
                     </li>
@@ -293,7 +293,7 @@
       </div>
       {%endfor%}
     </div>
-<!--
+    <!--
     <div class="text-center">
       <button type="button" class="" data-toggle="collapse" data-target="#rem"><i class="dropdown-toggle"></i>More
         Members</button>
@@ -306,8 +306,8 @@
 
 <!--Stats-->
 <section>
-    <div class="container-fluid p-5 text-light"
-      style="background-image: url({%static 'images/459024.jpg' %});background-attachment: fixed;background-size: 200vh;">
+  <div class="container-fluid p-5 text-light"
+    style="background-image: url({%static 'images/459024.jpg' %});background-attachment: fixed; background-size: 200vh;">
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-6 text-center">
         <h1>25 </h1>
@@ -344,9 +344,9 @@
           <img src="{{event.image.url}}" class="h-100 img-fluid">
         </div>
         <div>
-            <h3><a href="{{event.get_absolute_url}}">{{event.title }}</a></h3>
-            <h6>{{event.date }}</h6>
-            <p>{{event.description|safe|linebreaks|truncatewords:"20"}}</p>
+          <h3><a href="{{event.get_absolute_url}}">{{event.title }}</a></h3>
+          <h6>{{event.date }}</h6>
+          <p>{{event.description|safe|linebreaks|truncatewords:"20"}}</p>
         </div>
       </div>
       {%endfor%}
