@@ -82,8 +82,16 @@
 }
 
 @media screen and (max-width: 480px) {
+<<<<<<< HEAD
     
 .home_slider_content h3{
         font-size: 20px;
 }
 }
+=======
+
+.home_slider_content h3{
+        font-size: 20px;
+}
+}
+>>>>>>> 8f68db450e2023079217b87f1d9a50df0f207710

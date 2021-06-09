@@ -47,6 +47,7 @@
     }
 
   }
+
 </style>
 
 <!-- Home -->
@@ -80,8 +81,12 @@
 
       <!-- Slide -->
       <div class="owl-item">
+<<<<<<< HEAD
         <div class="background_image"
           style="background-image:url({% static 'images/c2.jpg' %})">
+=======
+        <div class="background_image" style="background-image:url({% static 'images/c2.jpg' %})">
+>>>>>>> 8f68db450e2023079217b87f1d9a50df0f207710
         </div>
         <div class="home_slider_content_container">
           <div class="container">
@@ -104,8 +109,12 @@
 
       <!-- Slide -->
       <div class="owl-item">
+<<<<<<< HEAD
         <div class="background_image"
           style="background-image:url({% static 'images/c3.jpg' %})">
+=======
+        <div class="background_image" style="background-image:url({% static 'images/c3.jpg' %})">
+>>>>>>> 8f68db450e2023079217b87f1d9a50df0f207710
         </div>
         <div class="home_slider_content_container">
           <div class="container">
@@ -254,8 +263,8 @@
 
                     <img src="{%static 'images/members/' %}{{member.Name}}.jpg" alt="Pic" class="img-fluid">
                   </div>
-                    <h2 class="membername">{{member.Name}}</h2>
-                    <p class="text-secondary h5">{{member.Position}}</p>
+                  <h2 class="membername">{{member.Name}}</h2>
+                  <p class="text-secondary h5">{{member.Position}}</p>
                 </div>
               </div>
             </div>
@@ -269,18 +278,19 @@
                   <p>{{member.Bio}}</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a href="{{member.Facebook_Profile}}" class="social-link" target="_blank">
+                      <a href="{{member.Facebook_Profile}}" class="social-link" target="_blank"
+                        rel="noopner noreferrer">
                         <i class="fab fa-facebook-square" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{member.LinkedIn_Profile}}"
-                        class="social-link" target="_blank">
+                      <a href="{{member.LinkedIn_Profile}}" class="social-link" target="_blank"
+                        rel="noopner noreferrer">
                         <i class="fab fa-linkedin" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{member.Github_Profile}}" class="social-link" target="_blank">
+                      <a href="{{member.Github_Profile}}" class="social-link" target="_blank" rel="noopner noreferrer">
                         <i class="fab fa-github-square" aria-hidden="true"></i>
                       </a>
                     </li>
@@ -293,7 +303,7 @@
       </div>
       {%endfor%}
     </div>
-<!--
+    <!--
     <div class="text-center">
       <button type="button" class="" data-toggle="collapse" data-target="#rem"><i class="dropdown-toggle"></i>More
         Members</button>
@@ -306,8 +316,8 @@
 
 <!--Stats-->
 <section>
-    <div class="container-fluid p-5 text-light"
-      style="background-image: url({%static 'images/459024.jpg' %});background-attachment: fixed;background-size: 200vh;">
+  <div class="container-fluid p-5 text-light"
+    style="background-image: url({%static 'images/459024.jpg' %});background-attachment: fixed; background-size: 200vh;">
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-6 text-center">
         <h1>25 </h1>
@@ -344,9 +354,9 @@
           <img src="{{event.image.url}}" class="h-100 img-fluid">
         </div>
         <div>
-            <h3><a href="{{event.get_absolute_url}}">{{event.title }}</a></h3>
-            <h6>{{event.date }}</h6>
-            <p>{{event.description|safe|linebreaks|truncatewords:"20"}}</p>
+          <h3><a href="{{event.get_absolute_url}}">{{event.title }}</a></h3>
+          <h6>{{event.date }}</h6>
+          <p>{{event.description|safe|linebreaks|truncatewords:"20"}}</p>
         </div>
       </div>
       {%endfor%}
