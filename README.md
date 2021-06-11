@@ -4,7 +4,17 @@
 
 ---
 
-# DESKTOP VIEW
+## Project Details
+
+  [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+  [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+  [![Generic badge](https://img.shields.io/badge/Project%20Status-Completed-<COLOR>.svg)](https://shields.io/)
+  [![Website monip.org](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](http://dscrecbijnor.com/)
+
+  This project is built on the *Django Framework(3.0)*. This project is build by [Developer Student Club Team](https://www.dscrecbijnor.com) headed by [Kumar Shanu](https://github.com/its-Kumar)(at Back-end Developement) and [Rajat Yadav](https://github.com/rajatyadav8540/)(at Front-end Development).
+
+## DESKTOP VIEW
 
 - view 1
 
@@ -20,11 +30,11 @@
 
 - view 4
 
-  ![dscblog](static/images/Screenshot4.png)
+![dscblog](static/images/Screenshot4.png)
+
   ---
 
-
-# MOBILE VIEW
+## MOBILE VIEW
 
 - **view 1**
 
@@ -44,66 +54,36 @@
 
 ---
 
-## Links:
+## Development
+
+### Github Flow
+
+  1. Clone the repo `$ git clone https://github.com/its-Kumar/dscweb`
+
+  2. Change directory `$ cd ./dscweb`
+
+  3. Create a branch with your name and checkout  `$ git checkout -b <yourname>-branch`
+
+  4. Change the code
+  5. Add the changes and commit
+  6. push the changes  `$ git push origin <yourname>-branch`
+
+### Project Setup
+
+  1. install Poetry `$ pip install poetry`
+
+  2. Activate the Environment `$ poetry shell`
+
+  3. Install packages `$ poetry install`
+
+  4. Migrate the database `$ python manage.py migrate`
+
+  5. Run server `$ python manage.py runserver`
+
+  6. Install Extra package (Optional) `$ poetry add package_name`
+
+## Links
 
 - [Facebook](https://www.facebook.com/dscrecbijnor/)
 - [Twitter](https://twitter.com/DscRec)
 - [Instagram](https://www.instagram.com/dscrecbijnor/?igshid=b8dp92k5qnhu)
-
----
-
-## Project Status
-
-- Completed
-
-## Project Details
-
-This project is built on the *Django Framework(3.0)*. This project is build by [Developer Student Club Team](https://www.dscrecbijnor.com) headed by [Kumar Shanu](https://github.com/its-Kumar)(at Back-end Developement) and [Rajat Yadav](https://github.com/rajatyadav8540/)(at Front-end Development).
-
-
----
-
-## Developement
-
-If you want to run the server in local make sure to turn on debug mode by modifying the line `DEBUG=False` to `DEBUG=True`.
-
-```python
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
-
-# Application definition
-```
-
-### Running the Server
-
-1. Run the following command to activate the environment:
-
-  ```bash
-  cd path/to/dir
-  pip install pipenv
-  pipenv shell
-  ```
-2. After that install all dependancies specified in Pipfile or Pipfile.lock :\
-`$ pipenv sync`
-
-3. Run the server using :
-  ```
-  python manage.py runserver 8000
-  or
-  pipenv run python manage.py runserver
-  ```
-  here 8000 is port number. you can use any port number you want.
-
-4. To install any package :
-  ```
-  pipenv install package_name
-  pipenv update  //run this at last
-  ```
-  It will automaticlly install the package and put it into requirements.
-
-### Admin
-
-    django admin : dsc
-    password :

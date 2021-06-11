@@ -261,16 +261,13 @@
             <div class="side2">
               <div class="card">
                 <div class="card-body text-center">
-                  <a href=" {{ member.Instagram_Profile}} ">
-                    <h3 class="membername text-decoration-none">{{member.Name}}</h3>
-                  </a>
-                  <p>{{member.Specialization}}</p>
+                  <h3 class="membername text-decoration-none">{{member.Name}}</h3>
+                  <p>{{member.Skills}}</p><br>
                   <p>{{member.Bio}}</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a href="{{member.Facebook_Profile}}" class="social-link" target="_blank"
-                        rel="noopner noreferrer">
-                        <i class="fab fa-facebook-square" aria-hidden="true"></i>
+                      <a href="mailto:{{member.Email}}" class="social-link">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
@@ -280,7 +277,7 @@
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{member.Github_Profile}}" class="social-link" target="_blank" rel="noopner noreferrer">
+                      <a href="{{member.GitHub_Profile}}" class="social-link" target="_blank" rel="noopner noreferrer">
                         <i class="fab fa-github-square" aria-hidden="true"></i>
                       </a>
                     </li>

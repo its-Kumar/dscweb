@@ -3,9 +3,15 @@
 import os
 import sys
 
+if "ENVIRONMENT_NAME" in os.environ:
+    environment_name = os.environ['ENVIRONMENT_NAME']
+    environment_settings_file = "dscweb.settings."+environment_name
+else:
+    environment_settings_file = "dscweb.settings.base"
+
 
 def main():
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dscweb.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", environment_settings_file)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

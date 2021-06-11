@@ -83,7 +83,7 @@
 
 @media screen and (max-width: 480px) {
 
-.home_slider_content h3{
-        font-size: 20px;
-}
+    .home_slider_content h3{
+            font-size: 20px;
+    }
 }
