@@ -1,12 +1,28 @@
 import csv
 
-from django.shortcuts import render
-
 from blog.models import BlogPost
+from django.shortcuts import render
 from events.models import Event
+
+from .LoggerData import LogData
+
+
+def visitor_ip_address(request):
+
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
 
 
 def home_view(request):
+    function_name = __name__ + '.' + home_view.__name__
+    ipAddress = visitor_ip_address(request)
+    log_id = LogData('DscWeb', ipAddress, function_name,
+                     "Website loaded Successfully", request.POST)
     members = []
     with open("members.csv") as csvfile:
         reader = csv.DictReader(csvfile)
@@ -38,11 +54,17 @@ def home_view(request):
 
 
 def about_view(request):
+    function_name = __name__ + '.' + about_view.__name__
+    ipAddress = visitor_ip_address(request)
     context = {"title": "About Us"}
+    LogData('DSCweb', ipAddress, function_name,
+            'About Page loaded Successfully...', request.POST)
     return render(request, "about.html", context)
 
 
 def search_view(request):
+    function_name = __name__ + '.' + search_view.__name__
+    ipAddress = visitor_ip_address(request)
     query = request.GET.get("q", None)
     context = {"query": query}
     if query is not None:
@@ -50,4 +72,6 @@ def search_view(request):
         event_list = Event.objects.search(query=query)
         context["blog_list"] = blog_list
         context["event_list"] = event_list
+    LogData('Dscweb', ipAddress, function_name,
+            'Search view loaded succcessfully', request.GET or request.POST)
     return render(request, "search.html", context)

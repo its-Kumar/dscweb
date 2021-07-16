@@ -86,6 +86,35 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dscweb.wsgi.application'
 
+
+# Logger
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': " %(message)s",
+        },
+    },
+    'handlers': {
+        'syslog': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/logs/dscweb-server.log',
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+
+    'loggers': {
+        'dscweb': {
+            'handlers': ['syslog', 'console'],
+            'level': 'DEBUG',
+        },
+    }
+}
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
