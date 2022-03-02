@@ -9,7 +9,7 @@ python = "^3.8"
 Django = "3.2.12"
 django-ckeditor = "^6.1.0"
 django-allauth = "^0.44.0"
-Pillow = "^8.2.0"
+Pillow = "^9.0.0"
 
 
 [tool.poetry.dev-dependencies]
