@@ -6,7 +6,7 @@ authors = ["Kumar Shanu"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Django = "3.2.12"
+Django = "3.2.14"
 django-ckeditor = "^6.1.0"
 django-allauth = "^0.44.0"
 Pillow = "^9.0.0"
